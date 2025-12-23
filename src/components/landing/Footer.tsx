@@ -1,6 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { Instagram, Twitter, Facebook, Phone } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/elegantoptions', label: 'Instagram' },
@@ -32,12 +33,11 @@ export const Footer = () => {
               whileHover={{ scale: 1.02 }}
               className="flex items-center gap-3 mb-4"
             >
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-xl">EO</span>
-              </div>
-              <span className={`font-bold text-2xl ${isRTL ? 'font-arabic' : ''}`}>
-                Elegant Options
-              </span>
+              <img 
+                src={logo} 
+                alt="Elegant Options" 
+                className="h-12 md:h-14 w-auto object-contain"
+              />
             </motion.div>
             <p className={`text-muted-foreground max-w-md mb-6 ${isRTL ? 'font-arabic' : ''}`}>
               {t('footer.description')}

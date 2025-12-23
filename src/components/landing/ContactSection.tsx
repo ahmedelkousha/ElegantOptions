@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, useInView } from 'framer-motion';
-import { Send, Phone, Mail, MapPin } from 'lucide-react';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
+import { Send, Phone, Mail, MapPin, Loader2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -13,6 +13,14 @@ export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { toast } = useToast();
+  
+  // Parallax scroll effects
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start end", "end start"]
+  });
+  
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -100]);
   
   const [formData, setFormData] = useState({
     name: '',
@@ -50,57 +58,104 @@ export const ContactSection = () => {
       ref={ref}
       className="section-container relative overflow-hidden"
     >
-      {/* Background */}
-      <div className="absolute inset-0">
+      {/* Cinematic Background */}
+      <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      </div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-primary/5 to-accent/5 rounded-full blur-3xl" />
+      </motion.div>
 
       <div className="container mx-auto relative z-10">
-        {/* Header */}
+        {/* Header with cinematic reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 80 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="text-center mb-16"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6">
+          <motion.div 
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <motion.span 
+              className="w-2 h-2 rounded-full bg-primary"
+              animate={{ scale: [1, 1.5, 1] }}
+              transition={{ duration: 2, repeat: Infinity }}
+            />
             <span className={`text-sm font-medium text-primary ${isRTL ? 'font-arabic' : ''}`}>
               {t('contact.badge')}
             </span>
-          </div>
+          </motion.div>
           
-          <h2 className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
+          <motion.h2 
+            className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${isRTL ? 'font-arabic' : ''}`}
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
             {t('contact.title')}{' '}
-            <span className="text-gradient">{t('contact.titleHighlight')}</span>
-          </h2>
+            <motion.span 
+              className="text-gradient inline-block"
+              initial={{ opacity: 0, x: 30 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.5 }}
+            >
+              {t('contact.titleHighlight')}
+            </motion.span>
+          </motion.h2>
           
-          <p className={`text-lg text-muted-foreground max-w-2xl mx-auto ${isRTL ? 'font-arabic' : ''}`}>
+          <motion.p 
+            className={`text-lg text-muted-foreground max-w-2xl mx-auto ${isRTL ? 'font-arabic' : ''}`}
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             {t('contact.subtitle')}
-          </p>
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto">
-          {/* Contact Form */}
+          {/* Contact Form with 3D reveal */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            initial={{ opacity: 0, x: isRTL ? 100 : -100, rotateY: isRTL ? -15 : 15 }}
+            animate={isInView ? { opacity: 1, x: 0, rotateY: 0 } : {}}
+            transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8 rounded-2xl space-y-6">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
+            <motion.form 
+              onSubmit={handleSubmit} 
+              className="glass-card p-6 md:p-8 rounded-2xl space-y-6 relative overflow-hidden"
+              whileHover={{ boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)" }}
+            >
+              {/* Shimmer effect */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full"
+                animate={{ translateX: ["100%", "-100%"] }}
+                transition={{ duration: 4, repeat: Infinity, repeatDelay: 3 }}
+              />
+              
+              <div className="grid sm:grid-cols-2 gap-4 relative z-10">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.6 }}
+                >
                   <label className={`block text-sm font-medium mb-2 ${isRTL ? 'font-arabic text-right' : ''}`}>
                     {t('contact.form.name')}
                   </label>
                   <Input
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className={`bg-muted/50 border-border/50 ${isRTL ? 'text-right' : ''}`}
+                    className={`bg-muted/50 border-border/50 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 ${isRTL ? 'text-right' : ''}`}
                     required
                   />
-                </div>
-                <div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.7 }}
+                >
                   <label className={`block text-sm font-medium mb-2 ${isRTL ? 'font-arabic text-right' : ''}`}>
                     {t('contact.form.email')}
                   </label>
@@ -108,13 +163,18 @@ export const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className={`bg-muted/50 border-border/50 ${isRTL ? 'text-right' : ''}`}
+                    className={`bg-muted/50 border-border/50 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 ${isRTL ? 'text-right' : ''}`}
                     required
                   />
-                </div>
+                </motion.div>
               </div>
               
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.8 }}
+                className="relative z-10"
+              >
                 <label className={`block text-sm font-medium mb-2 ${isRTL ? 'font-arabic text-right' : ''}`}>
                   {t('contact.form.phone')}
                 </label>
@@ -122,44 +182,61 @@ export const ContactSection = () => {
                   type="tel"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className={`bg-muted/50 border-border/50 ${isRTL ? 'text-right' : ''}`}
+                  className={`bg-muted/50 border-border/50 transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 ${isRTL ? 'text-right' : ''}`}
                 />
-              </div>
+              </motion.div>
               
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.9 }}
+                className="relative z-10"
+              >
                 <label className={`block text-sm font-medium mb-2 ${isRTL ? 'font-arabic text-right' : ''}`}>
                   {t('contact.form.message')}
                 </label>
                 <Textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className={`bg-muted/50 border-border/50 min-h-[120px] ${isRTL ? 'text-right' : ''}`}
+                  className={`bg-muted/50 border-border/50 min-h-[120px] transition-all focus:border-primary focus:ring-2 focus:ring-primary/20 ${isRTL ? 'text-right' : ''}`}
                   required
                 />
-              </div>
+              </motion.div>
 
-              <Button
-                type="submit"
-                className="w-full glow-primary"
-                disabled={isSubmitting}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 1 }}
+                className="relative z-10"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
               >
-                {isSubmitting ? (
-                  <span className={isRTL ? 'font-arabic' : ''}>{t('contact.form.sending')}</span>
-                ) : (
-                  <>
-                    <Send className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
-                    <span className={isRTL ? 'font-arabic' : ''}>{t('contact.form.submit')}</span>
-                  </>
-                )}
-              </Button>
-            </form>
+                <Button
+                  type="submit"
+                  className="w-full glow-primary"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className={`w-4 h-4 animate-spin ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                      <span className={isRTL ? 'font-arabic' : ''}>{t('contact.form.sending')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Send className={`w-4 h-4 ${isRTL ? 'ml-2' : 'mr-2'}`} />
+                      <span className={isRTL ? 'font-arabic' : ''}>{t('contact.form.submit')}</span>
+                    </>
+                  )}
+                </Button>
+              </motion.div>
+            </motion.form>
           </motion.div>
 
-          {/* Contact Info */}
+          {/* Contact Info with staggered reveals */}
           <motion.div
-            initial={{ opacity: 0, x: isRTL ? -50 : 50 }}
+            initial={{ opacity: 0, x: isRTL ? -100 : 100 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="flex flex-col justify-center space-y-8"
           >
             {contactInfo.map((info, index) => {
@@ -168,31 +245,55 @@ export const ContactSection = () => {
                 <motion.a
                   key={index}
                   href={info.href}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.4 + index * 0.1 }}
-                  whileHover={{ x: isRTL ? -10 : 10 }}
-                  className={`flex items-center gap-4 p-4 glass-card rounded-xl hover:glow-primary transition-shadow ${
+                  initial={{ opacity: 0, y: 40, x: isRTL ? -30 : 30 }}
+                  animate={isInView ? { opacity: 1, y: 0, x: 0 } : {}}
+                  transition={{ 
+                    delay: 0.7 + index * 0.15,
+                    duration: 0.6,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  whileHover={{ 
+                    x: isRTL ? -15 : 15,
+                    scale: 1.02,
+                    transition: { duration: 0.2 }
+                  }}
+                  className={`flex items-center gap-4 p-4 glass-card rounded-xl hover:glow-primary transition-all ${
                     isRTL ? 'flex-row-reverse' : ''
                   }`}
                 >
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0">
+                  <motion.div 
+                    className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center flex-shrink-0"
+                    whileHover={{ rotate: [0, -10, 10, 0] }}
+                    transition={{ duration: 0.4 }}
+                  >
                     <Icon className="w-6 h-6 text-primary-foreground" />
-                  </div>
+                  </motion.div>
                   <span className={`text-lg ${isRTL ? 'font-arabic' : ''}`}>{info.label}</span>
                 </motion.a>
               );
             })}
 
-            {/* Social Links */}
-            <div className={`flex gap-4 ${isRTL ? 'justify-end' : ''}`}>
-              {['instagram', 'twitter', 'facebook'].map((social) => (
+            {/* Social Links with bouncy reveals */}
+            <motion.div 
+              className={`flex gap-4 ${isRTL ? 'justify-end' : ''}`}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ delay: 1.1 }}
+            >
+              {['instagram', 'twitter', 'facebook'].map((social, index) => (
                 <motion.a
                   key={social}
                   href={`https://${social}.com/elegantoptions`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -5 }}
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ 
+                    delay: 1.2 + index * 0.1,
+                    type: "spring",
+                    stiffness: 200
+                  }}
+                  whileHover={{ scale: 1.15, y: -5, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   className="w-12 h-12 rounded-xl bg-muted/50 border border-border/50 flex items-center justify-center hover:bg-primary/20 hover:border-primary/50 transition-colors"
                 >
@@ -214,7 +315,7 @@ export const ContactSection = () => {
                   )}
                 </motion.a>
               ))}
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

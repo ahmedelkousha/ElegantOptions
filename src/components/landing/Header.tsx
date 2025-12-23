@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import logo from '@/assets/logo.png';
 
 const navItems = ['home', 'about', 'services', 'pricing', 'contact'];
 
@@ -52,12 +53,11 @@ export const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2"
           >
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">EO</span>
-            </div>
-            <span className={`font-bold text-lg md:text-xl ${isRTL ? 'font-arabic' : ''}`}>
-              Elegant Options
-            </span>
+            <img 
+              src={logo} 
+              alt="Elegant Options" 
+              className="h-10 md:h-12 w-auto object-contain"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}

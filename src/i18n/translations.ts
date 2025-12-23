@@ -163,6 +163,29 @@ export const translations = {
         privacy: "Privacy Policy",
         terms: "Terms of Service",
       },
+
+      // Stats Section
+      stats: {
+        badge: "Why Choose Us",
+        title: "Numbers That Speak",
+        subtitle: "Real results that demonstrate our commitment to your success",
+        messageOpenRate: {
+          title: "Message Open Rate",
+          description: "WhatsApp messages have the highest open rate compared to any other channel",
+        },
+        costReduction: {
+          title: "Cost Reduction",
+          description: "Reduce customer service costs with AI-powered automation",
+        },
+        customerService: {
+          title: "Customer Service",
+          description: "Round-the-clock availability with instant response times",
+        },
+        fullAutomation: {
+          title: "Full Automation",
+          description: "Complete workflow automation from inquiry to conversion",
+        },
+      },
     },
   },
   
@@ -329,6 +352,29 @@ export const translations = {
         rights: "جميع الحقوق محفوظة.",
         privacy: "سياسة الخصوصية",
         terms: "شروط الخدمة",
+      },
+
+      // Stats Section
+      stats: {
+        badge: "لماذا تختارنا",
+        title: "أرقام تتحدث",
+        subtitle: "نتائج حقيقية تثبت التزامنا بنجاحك",
+        messageOpenRate: {
+          title: "معدل فتح الرسائل",
+          description: "رسائل واتساب تحقق أعلى معدل فتح مقارنة بأي قناة أخرى",
+        },
+        costReduction: {
+          title: "تخفيض التكاليف",
+          description: "خفض تكاليف خدمة العملاء مع الأتمتة بالذكاء الاصطناعي",
+        },
+        customerService: {
+          title: "خدمة العملاء",
+          description: "متاحون على مدار الساعة مع أوقات استجابة فورية",
+        },
+        fullAutomation: {
+          title: "أتمتة كاملة",
+          description: "أتمتة سير العمل الكامل من الاستفسار إلى التحويل",
+        },
       },
     },
   },

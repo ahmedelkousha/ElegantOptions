@@ -195,6 +195,15 @@ export const translations = {
         subtitle: "Discover how businesses like yours have transformed their operations with our AI solutions.",
         trustedBy: "Trusted by Leading Companies",
       },
+
+      // Portfolio Section
+      portfolio: {
+        badge: "Case Studies",
+        title: "Success Stories",
+        titleHighlight: "That Inspire",
+        subtitle: "Explore how we have helped businesses achieve remarkable results with our AI-powered solutions.",
+        cta: "View All Projects",
+      },
     },
   },
   
@@ -394,6 +403,15 @@ export const translations = {
         titleHighlight: "عنا",
         subtitle: "اكتشف كيف حولت الشركات مثل شركتك عملياتها مع حلول الذكاء الاصطناعي لدينا.",
         trustedBy: "موثوق من قبل الشركات الرائدة",
+      },
+
+      // Portfolio Section
+      portfolio: {
+        badge: "دراسات الحالة",
+        title: "قصص النجاح",
+        titleHighlight: "الملهمة",
+        subtitle: "اكتشف كيف ساعدنا الشركات على تحقيق نتائج مذهلة مع حلولنا المدعومة بالذكاء الاصطناعي.",
+        cta: "عرض جميع المشاريع",
       },
     },
   },

@@ -129,7 +129,7 @@ export const TestimonialsSection = () => {
         </motion.div>
 
         {/* Testimonials Carousel */}
-        <div className="relative max-w-4xl mx-auto mb-20">
+        <div className="relative max-w-4xl mx-auto mb-20" dir="ltr">
           <div className="overflow-hidden rounded-3xl">
             <motion.div
               className="flex"
@@ -144,13 +144,16 @@ export const TestimonialsSection = () => {
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 }}
                 >
-                  <div className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 md:p-12 relative overflow-hidden group">
+                  <div 
+                    className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 md:p-12 relative overflow-hidden group"
+                    dir={isRTL ? 'rtl' : 'ltr'}
+                  >
                     {/* Shimmer effect */}
                     <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
                     
                     {/* Quote icon */}
                     <motion.div
-                      className="absolute top-6 right-6 text-primary/20"
+                      className={`absolute top-6 ${isRTL ? 'left-6' : 'right-6'} text-primary/20`}
                       animate={{ 
                         rotate: [0, 10, -10, 0],
                         scale: [1, 1.1, 1]
@@ -192,7 +195,7 @@ export const TestimonialsSection = () => {
                             className="w-full h-full object-cover"
                           />
                         </div>
-                        <div className="absolute -bottom-1 -right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-background" />
+                        <div className={`absolute -bottom-1 ${isRTL ? '-left-1' : '-right-1'} w-5 h-5 bg-green-500 rounded-full border-2 border-background`} />
                       </motion.div>
                       <div>
                         <h4 className="font-semibold text-foreground">

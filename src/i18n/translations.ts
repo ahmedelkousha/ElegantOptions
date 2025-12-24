@@ -186,8 +186,18 @@ export const translations = {
           description: "Complete workflow automation from inquiry to conversion",
         },
       },
+
+      // Testimonials Section
+      testimonials: {
+        badge: "Testimonials",
+        title: "What Our Clients",
+        titleHighlight: "Say About Us",
+        subtitle: "Discover how businesses like yours have transformed their operations with our AI solutions.",
+        trustedBy: "Trusted by Leading Companies",
+      },
     },
   },
+  
   
   ar: {
     translation: {
@@ -375,6 +385,15 @@ export const translations = {
           title: "أتمتة كاملة",
           description: "أتمتة سير العمل الكامل من الاستفسار إلى التحويل",
         },
+      },
+
+      // Testimonials Section
+      testimonials: {
+        badge: "آراء العملاء",
+        title: "ماذا يقول عملاؤنا",
+        titleHighlight: "عنا",
+        subtitle: "اكتشف كيف حولت الشركات مثل شركتك عملياتها مع حلول الذكاء الاصطناعي لدينا.",
+        trustedBy: "موثوق من قبل الشركات الرائدة",
       },
     },
   },

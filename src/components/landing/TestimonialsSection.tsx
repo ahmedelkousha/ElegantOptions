@@ -90,6 +90,7 @@ export const TestimonialsSection = () => {
 
   return (
     <section 
+      id="testimonials"
       ref={sectionRef}
       className="py-24 bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden"
     >

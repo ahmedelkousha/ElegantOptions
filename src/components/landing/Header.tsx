@@ -56,7 +56,7 @@ export const Header = () => {
             <img 
               src={logo} 
               alt="Elegant Options" 
-              className="h-10 md:h-20 w-auto object-contain"
+              className="h-10 md:h-16 w-auto object-contain"
             />
           </motion.div>
 

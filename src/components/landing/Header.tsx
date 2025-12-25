@@ -5,7 +5,7 @@ import { Menu, X, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import logo from '@/assets/logo.png';
 
-const navItems = ['home', 'about', 'services', 'pricing', 'contact'];
+const navItems = ['home', 'about', 'services', 'portfolio', 'testimonials', 'pricing', 'contact'];
 
 export const Header = () => {
   const { t, i18n } = useTranslation();

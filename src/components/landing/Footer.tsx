@@ -10,7 +10,7 @@ const socialLinks = [
   { icon: Phone, href: 'tel:+965XXXXXXXX', label: 'Phone' },
 ];
 
-const navLinks = ['home', 'about', 'services', 'pricing', 'contact'];
+const navLinks = ['home', 'about', 'services', 'portfolio', 'testimonials', 'pricing', 'contact'];
 
 export const Footer = () => {
   const { t, i18n } = useTranslation();

@@ -103,7 +103,7 @@ export const PreLoader = ({ onComplete }: PreLoaderProps) => {
             transition={{ delay: 0.3 }}
             className="text-3xl md:text-4xl font-bold text-gradient"
           >
-            Tech Maverick
+            Elegant Options
           </motion.h1>
 
           {/* Progress Bar */}

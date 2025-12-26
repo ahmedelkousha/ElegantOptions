@@ -54,7 +54,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className={`text-center lg:text-left ${isRTL ? 'lg:text-right' : ''}`}
+            className={`text-center lg:text-left mt-[8px] ${isRTL ? 'lg:text-right' : ''}`}
           >
             {/* Badge */}
             <motion.div

@@ -125,7 +125,7 @@ export const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative flex justify-center mb-2 items-center"
+            className="relative flex justify-center mt-[-80px] items-center"
           >
             <div className="relative w-72 h-72 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
               {/* Glow Effect */}

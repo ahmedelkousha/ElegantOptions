@@ -19,7 +19,7 @@ export const HeroSection = () => {
   return (
     <section
       id="home"
-      className="relative h-[80vh] flex items-center justify-center overflow-hidden network-bg"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden network-bg"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">

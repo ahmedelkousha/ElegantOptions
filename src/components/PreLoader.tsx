@@ -122,7 +122,7 @@ export const PreLoader = ({ onComplete }: PreLoaderProps) => {
               transition={{ delay: 0.5 }}
               className="text-sm text-muted-foreground text-center mt-3"
             >
-              {progress < 100 ? '...Loading page' : '!Ready'}
+              {progress < 100 ? 'برجاء الانتظار' : 'تم التحميل!'}
             </motion.p>
           </div>
 

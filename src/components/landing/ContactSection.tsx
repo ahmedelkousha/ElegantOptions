@@ -59,8 +59,8 @@ export const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: '+965 66305551', href: 'tel:+96566305551' },
-    { icon: Mail, label: 'Info@elegant-options.com', href: 'mailto:Info@elegant-options.com' },
+    { icon: Phone, label: '+965 66305551', href: 'tel:+96566305551', isPhone: true },
+    { icon: Mail, label: 'Info@elegant-options.com', href: 'mailto:Info@elegant-options.com', isEmail: true },
     { icon: MapPin, label: isRTL ? 'السالمية، بلوك 10، الكويت 11010' : 'Salmiya, Block 10, Kuwait 11010', href: 'https://maps.google.com/?q=Salmiya+Block+10+Kuwait' },
   ];
 
@@ -280,7 +280,7 @@ export const ContactSection = () => {
                   >
                     <Icon className="w-6 h-6 text-primary-foreground" />
                   </motion.div>
-                  <span className={`text-lg ${isRTL ? 'font-arabic' : ''}`}>{info.label}</span>
+                  <span dir="ltr" className={`text-base md:text-lg break-all md:break-normal ${isRTL && !info.isPhone && !info.isEmail ? 'font-arabic' : ''}`}>{info.label}</span>
                 </motion.a>
               );
             })}

@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import { Check, Sparkles, Crown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const plans = ['essential', 'professional', 'advanced'];
+const plans = ['starter', 'essential', 'professional', 'advanced'];
 
 export const PricingSection = () => {
   const { t, i18n } = useTranslation();
@@ -90,7 +90,7 @@ export const PricingSection = () => {
         </motion.div>
 
         {/* Pricing Cards with 3D staggered reveals */}
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-6 max-w-7xl mx-auto">
           {plans.map((plan, index) => {
             const isProfessional = plan === 'professional';
             const features = t(`pricing.${plan}.features`, { returnObjects: true }) as string[];

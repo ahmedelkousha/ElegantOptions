@@ -89,6 +89,16 @@ export const translations = {
         popular: "Most Popular",
         cta: "Get Started",
         
+        starter: {
+          name: "Starter",
+          price: "XX",
+          description: "Placeholder description for starter plan",
+          features: [
+            "Feature placeholder 1",
+            "Feature placeholder 2",
+            "Feature placeholder 3",
+          ],
+        },
         essential: {
           name: "Essential",
           price: "49",
@@ -300,6 +310,16 @@ export const translations = {
         popular: "الأكثر شعبية",
         cta: "ابدأ الآن",
         
+        starter: {
+          name: "البداية",
+          price: "XX",
+          description: "وصف مؤقت لخطة البداية",
+          features: [
+            "ميزة مؤقتة 1",
+            "ميزة مؤقتة 2",
+            "ميزة مؤقتة 3",
+          ],
+        },
         essential: {
           name: "الأساسية",
           price: "49",

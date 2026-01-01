@@ -52,14 +52,14 @@ const testimonials = [
 ];
 
 const partnerLogos = [
-  { name: 'TechCorp', icon: '🏢' },
-  { name: 'InnovateCo', icon: '💡' },
-  { name: 'GlobalTrade', icon: '🌍' },
-  { name: 'FinanceHub', icon: '📊' },
-  { name: 'HealthPlus', icon: '🏥' },
-  { name: 'EduTech', icon: '📚' },
-  { name: 'RetailMax', icon: '🛒' },
-  { name: 'MediaPro', icon: '📺' },
+  { name: 'Zara', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg' },
+  { name: 'IKEA', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Ikea_logo.svg' },
+  { name: 'Carrefour', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Carrefour_logo.svg' },
+  { name: 'Samsung', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg' },
+  { name: 'Huawei', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg' },
+  { name: 'LG', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/20/LG_symbol.svg' },
+  { name: 'Adidas', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg' },
+  { name: 'Nike', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg' },
 ];
 
 export const TestimonialsSection = () => {
@@ -283,11 +283,14 @@ export const TestimonialsSection = () => {
               {[...partnerLogos, ...partnerLogos].map((partner, index) => (
                 <motion.div
                   key={index}
-                  className="flex items-center gap-3 px-6 py-4 bg-card/50 backdrop-blur-sm border border-border/30 rounded-xl min-w-[200px]"
+                  className="flex items-center justify-center px-8 py-4 bg-card/50 backdrop-blur-sm border border-border/30 rounded-xl min-w-[180px] h-16"
                   whileHover={{ scale: 1.05, y: -5 }}
                 >
-                  <span className="text-3xl">{partner.icon}</span>
-                  <span className="text-foreground font-medium whitespace-nowrap">{partner.name}</span>
+                  <img 
+                    src={partner.logo} 
+                    alt={partner.name}
+                    className="h-8 w-auto object-contain filter dark:invert opacity-70 hover:opacity-100 transition-opacity"
+                  />
                 </motion.div>
               ))}
             </motion.div>

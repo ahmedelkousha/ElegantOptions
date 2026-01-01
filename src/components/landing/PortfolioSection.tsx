@@ -229,21 +229,6 @@ export const PortfolioSection = () => {
           ))}
         </div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-12"
-        >
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full group"
-          >
-            {t('portfolio.cta')}
-            <ArrowUpRight className="w-5 h-5 ms-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </Button>
-        </motion.div>
       </div>
     </section>
   );

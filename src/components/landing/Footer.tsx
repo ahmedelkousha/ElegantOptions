@@ -7,7 +7,7 @@ const socialLinks = [
   { icon: Instagram, href: 'https://instagram.com/elegantoptions', label: 'Instagram' },
   { icon: Twitter, href: 'https://twitter.com/elegantoptions', label: 'Twitter' },
   { icon: Facebook, href: 'https://facebook.com/elegantoptions', label: 'Facebook' },
-  { icon: Phone, href: 'tel:+965XXXXXXXX', label: 'Phone' },
+  { icon: Phone, href: 'tel:+96566305551', label: 'Phone' },
 ];
 
 const navLinks = ['home', 'about', 'services', 'portfolio', 'testimonials', 'pricing', 'contact'];
@@ -92,9 +92,19 @@ export const Footer = () => {
               {t('footer.contact')}
             </h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li className={isRTL ? 'font-arabic' : ''}>{t('contact.info.phone')}</li>
-              <li>{t('contact.info.email')}</li>
-              <li className={isRTL ? 'font-arabic' : ''}>{t('contact.info.address')}</li>
+              <li>
+                <a href="tel:+96566305551" className="hover:text-foreground transition-colors">
+                  +965 66305551
+                </a>
+              </li>
+              <li>
+                <a href="mailto:Info@elegant-options.com" className="hover:text-foreground transition-colors">
+                  Info@elegant-options.com
+                </a>
+              </li>
+              <li className={isRTL ? 'font-arabic' : ''}>
+                {isRTL ? 'السالمية، بلوك 10، الكويت 11010' : 'Salmiya, Block 10, Kuwait 11010'}
+              </li>
             </ul>
           </div>
         </div>
@@ -108,10 +118,10 @@ export const Footer = () => {
               © {new Date().getFullYear()} Elegant Options. {t('footer.rights')}
             </p>
             <div className={`flex gap-6 text-sm text-muted-foreground ${isRTL ? 'flex-row-reverse' : ''}`}>
-              <a href="#" className={`hover:text-foreground transition-colors ${isRTL ? 'font-arabic' : ''}`}>
+              <a href="/privacy" className={`hover:text-foreground transition-colors ${isRTL ? 'font-arabic' : ''}`}>
                 {t('footer.privacy')}
               </a>
-              <a href="#" className={`hover:text-foreground transition-colors ${isRTL ? 'font-arabic' : ''}`}>
+              <a href="/terms" className={`hover:text-foreground transition-colors ${isRTL ? 'font-arabic' : ''}`}>
                 {t('footer.terms')}
               </a>
             </div>

@@ -149,9 +149,9 @@ export const translations = {
         },
         
         info: {
-          phone: "+965 XXXX XXXX",
-          email: "info@elegantoptions.com",
-          address: "Kuwait City, Kuwait",
+          phone: "+965 66305551",
+          email: "Info@elegant-options.com",
+          address: "Salmiya, Block 10, Kuwait 11010",
         },
       },
       
@@ -360,9 +360,9 @@ export const translations = {
         },
         
         info: {
-          phone: "+965 XXXX XXXX",
-          email: "info@elegantoptions.com",
-          address: "مدينة الكويت، الكويت",
+          phone: "+965 66305551",
+          email: "Info@elegant-options.com",
+          address: "السالمية، بلوك 10، الكويت 11010",
         },
       },
       

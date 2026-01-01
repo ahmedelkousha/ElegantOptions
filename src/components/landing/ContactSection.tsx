@@ -34,8 +34,20 @@ export const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Build WhatsApp message
+    const message = encodeURIComponent(
+      `*New Contact Form Submission*\n\n` +
+      `*Name:* ${formData.name}\n` +
+      `*Email:* ${formData.email}\n` +
+      `*Phone:* ${formData.phone || 'Not provided'}\n` +
+      `*Message:* ${formData.message}`
+    );
+    
+    const whatsappNumber = '96566305551';
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    
+    // Open WhatsApp in new tab
+    window.open(whatsappUrl, '_blank');
     
     toast({
       title: t('contact.form.success'),
@@ -47,9 +59,9 @@ export const ContactSection = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: t('contact.info.phone'), href: 'tel:+965XXXXXXXX' },
-    { icon: Mail, label: t('contact.info.email'), href: 'mailto:info@elegantoptions.com' },
-    { icon: MapPin, label: t('contact.info.address'), href: '#' },
+    { icon: Phone, label: '+965 66305551', href: 'tel:+96566305551' },
+    { icon: Mail, label: 'Info@elegant-options.com', href: 'mailto:Info@elegant-options.com' },
+    { icon: MapPin, label: isRTL ? 'السالمية، بلوك 10، الكويت 11010' : 'Salmiya, Block 10, Kuwait 11010', href: 'https://maps.google.com/?q=Salmiya+Block+10+Kuwait' },
   ];
 
   return (

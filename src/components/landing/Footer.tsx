@@ -93,7 +93,7 @@ export const Footer = () => {
             </h4>
             <ul className="space-y-2 text-muted-foreground">
               <li>
-                <a href="tel:+96566305551" className="hover:text-foreground transition-colors">
+                <a dir="ltr" href="tel:+96566305551" className="hover:text-foreground transition-colors">
                   +965 66305551
                 </a>
               </li>

@@ -273,10 +273,10 @@ export const TestimonialsSection = () => {
             <motion.div
               className="flex gap-12"
               animate={{
-                x: isRTL ? [0, 400] : [-400, 0],
+                x: isRTL ? ['0%', '50%'] : ['-50%', '0%'],
               }}
               transition={{
-                duration: 20,
+                duration: 30,
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "linear",

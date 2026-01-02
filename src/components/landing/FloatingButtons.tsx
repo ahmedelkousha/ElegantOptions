@@ -19,7 +19,7 @@ export const FloatingButtons = () => {
 
   const openWhatsApp = () => {
     const message = encodeURIComponent('Hello! I would like to learn more about Elegant Options services.');
-    window.open(`https://wa.me/965XXXXXXXX?text=${message}`, '_blank');
+    window.open(`https://wa.me/96566305551?text=${message}`, '_blank');
   };
 
   return (

@@ -52,12 +52,16 @@ const testimonials = [
 ];
 
 const partnerLogos = [
-  { name: 'Slack', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg' },
-  { name: 'Trello', logo: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg' },
-  { name: 'Notion', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
-  { name: 'Mailchimp', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Mailchimp_Logo.svg' },
-  { name: 'Basecamp', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Basecamp_logo.svg' },
-  { name: 'Asana', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg' },
+  { name: 'Slack', logo: 'https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg' },
+  { name: 'Trello', logo: 'https://cdn.worldvectorlogo.com/logos/trello.svg' },
+  { name: 'Zoom', logo: 'https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg' },
+  { name: 'Dropbox', logo: 'https://cdn.worldvectorlogo.com/logos/dropbox-1.svg' },
+  { name: 'Monday', logo: 'https://cdn.worldvectorlogo.com/logos/monday-1.svg' },
+  { name: 'Shopify', logo: 'https://cdn.worldvectorlogo.com/logos/shopify.svg' },
+  { name: 'Hubspot', logo: 'https://cdn.worldvectorlogo.com/logos/hubspot.svg' },
+  { name: 'Stripe', logo: 'https://cdn.worldvectorlogo.com/logos/stripe-4.svg' },
+  { name: 'Zendesk', logo: 'https://cdn.worldvectorlogo.com/logos/zendesk-1.svg' },
+  { name: 'Freshdesk', logo: 'https://cdn.worldvectorlogo.com/logos/freshdesk.svg' },
 ];
 
 export const TestimonialsSection = () => {

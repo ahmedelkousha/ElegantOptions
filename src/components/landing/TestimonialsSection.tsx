@@ -52,14 +52,12 @@ const testimonials = [
 ];
 
 const partnerLogos = [
-  { name: 'Zara', logo: 'https://upload.wikimedia.org/wikipedia/commons/f/fd/Zara_Logo.svg' },
-  { name: 'IKEA', logo: 'https://upload.wikimedia.org/wikipedia/commons/c/c5/Ikea_logo.svg' },
-  { name: 'Carrefour', logo: 'https://upload.wikimedia.org/wikipedia/commons/5/5b/Carrefour_logo.svg' },
-  { name: 'Samsung', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/24/Samsung_Logo.svg' },
-  { name: 'Huawei', logo: 'https://upload.wikimedia.org/wikipedia/commons/e/e8/Huawei_Logo.svg' },
-  { name: 'LG', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/20/LG_symbol.svg' },
-  { name: 'Adidas', logo: 'https://upload.wikimedia.org/wikipedia/commons/2/20/Adidas_Logo.svg' },
-  { name: 'Nike', logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a6/Logo_NIKE.svg' },
+  { name: 'Slack', logo: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg' },
+  { name: 'Trello', logo: 'https://upload.wikimedia.org/wikipedia/en/8/8c/Trello_logo.svg' },
+  { name: 'Notion', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png' },
+  { name: 'Mailchimp', logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4e/Mailchimp_Logo.svg' },
+  { name: 'Basecamp', logo: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Basecamp_logo.svg' },
+  { name: 'Asana', logo: 'https://upload.wikimedia.org/wikipedia/commons/3/3b/Asana_logo.svg' },
 ];
 
 export const TestimonialsSection = () => {

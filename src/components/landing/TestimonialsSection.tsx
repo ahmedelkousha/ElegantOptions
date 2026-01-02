@@ -276,7 +276,7 @@ export const TestimonialsSection = () => {
                 x: isRTL ? ['0%', '50%'] : ['-50%', '0%'],
               }}
               transition={{
-                duration: 30,
+                duration: 15,
                 repeat: Infinity,
                 repeatType: "loop",
                 ease: "linear",

@@ -23,7 +23,7 @@ const Counter = ({
 
   useEffect(() => {
     const hasIntersectionObserver =
-      typeof window !== "undefined" && "IntersectionObserver" in window;
+      typeof window !== 'undefined' && 'IntersectionObserver' in window;
 
     // If IntersectionObserver isn't supported, animate immediately.
     if ((hasIntersectionObserver && !isInView) || end === 0) return;
@@ -33,10 +33,7 @@ const Counter = ({
 
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
-      const progress = Math.min(
-        (currentTime - startTime) / (duration * 1000),
-        1
-      );
+      const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
 
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);

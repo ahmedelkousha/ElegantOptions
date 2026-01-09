@@ -128,7 +128,7 @@ export const AboutSection = () => {
                     y: -10,
                     boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)"
                   }}
-                  className="glass-card p-6 rounded-2xl group cursor-pointer relative overflow-hidden"
+                  className="glass-card p-6 rounded-2xl group relative overflow-hidden"
                 >
                   {/* Hover gradient overlay */}
                   <motion.div

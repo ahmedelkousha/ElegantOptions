@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  
+  <!-- Homepage - English -->
+  <url>
+    <loc>https://www.elegant-options.com/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/" />
+  </url>
+
+  <!-- Homepage - Arabic -->
+  <url>
+    <loc>https://www.elegant-options.com/</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/" />
+  </url>
+
+  <!-- Terms of Service - English -->
+  <url>
+    <loc>https://www.elegant-options.com/terms</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/terms" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/terms" />
+  </url>
+
+  <!-- Terms of Service - Arabic -->
+  <url>
+    <loc>https://www.elegant-options.com/terms</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/terms" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/terms" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/terms" />
+  </url>
+
+  <!-- Privacy Policy - English -->
+  <url>
+    <loc>https://www.elegant-options.com/privacy</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/privacy" />
+  </url>
+
+  <!-- Privacy Policy - Arabic -->
+  <url>
+    <loc>https://www.elegant-options.com/privacy</loc>
+    <lastmod>2024-12-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.elegant-options.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://www.elegant-options.com/privacy" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.elegant-options.com/privacy" />
+  </url>
+
+</urlset>

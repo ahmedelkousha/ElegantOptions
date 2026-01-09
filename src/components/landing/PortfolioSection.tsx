@@ -2,7 +2,6 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ArrowUpRight, TrendingUp, Users, MessageSquare, Star } from 'lucide-react';
-import { Button } from '@/components/ui/button';
 
 const caseStudies = [
   {

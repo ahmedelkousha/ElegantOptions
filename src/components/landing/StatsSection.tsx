@@ -1,8 +1,8 @@
-import { useTranslation } from 'react-i18next';
-import { motion, useInView } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
-import { MessageSquare, TrendingDown, Headphones, Zap } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { useTranslation } from "react-i18next";
+import { motion, useInView } from "framer-motion";
+import { useRef, useEffect, useState } from "react";
+import { MessageSquare, TrendingDown, Headphones, Zap } from "lucide-react";
+import { Card } from "@/components/ui/card";
 
 interface CounterProps {
   end: number;
@@ -11,7 +11,12 @@ interface CounterProps {
   duration?: number;
 }
 
-const Counter = ({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) => {
+const Counter = ({
+  end,
+  suffix = "",
+  prefix = "",
+  duration = 2,
+}: CounterProps) => {
   const [count, setCount] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
@@ -50,49 +55,51 @@ const Counter = ({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) 
 
   return (
     <span ref={ref} className="tabular-nums">
-      {prefix}{count}{suffix}
+      {prefix}
+      {count}
+      {suffix}
     </span>
   );
 };
 
 const stats = [
   {
-    key: 'messageOpenRate',
+    key: "messageOpenRate",
     icon: MessageSquare,
     value: 98,
-    suffix: '%',
-    gradient: 'from-emerald-500 to-teal-500',
-    shadowColor: 'shadow-emerald-500/20',
+    suffix: "%",
+    gradient: "from-emerald-500 to-teal-500",
+    shadowColor: "shadow-emerald-500/20",
   },
   {
-    key: 'costReduction',
+    key: "costReduction",
     icon: TrendingDown,
     value: 60,
-    suffix: '%',
-    gradient: 'from-blue-500 to-cyan-500',
-    shadowColor: 'shadow-blue-500/20',
+    suffix: "%",
+    gradient: "from-blue-500 to-cyan-500",
+    shadowColor: "shadow-blue-500/20",
   },
   {
-    key: 'customerService',
+    key: "customerService",
     icon: Headphones,
     value: 24,
-    suffix: '/7',
-    gradient: 'from-purple-500 to-pink-500',
-    shadowColor: 'shadow-purple-500/20',
+    suffix: "/7",
+    gradient: "from-purple-500 to-pink-500",
+    shadowColor: "shadow-purple-500/20",
   },
   {
-    key: 'fullAutomation',
+    key: "fullAutomation",
     icon: Zap,
     value: 100,
-    suffix: '%',
-    gradient: 'from-amber-500 to-orange-500',
-    shadowColor: 'shadow-amber-500/20',
+    suffix: "%",
+    gradient: "from-amber-500 to-orange-500",
+    shadowColor: "shadow-amber-500/20",
   },
 ];
 
 export const StatsSection = () => {
   const { t, i18n } = useTranslation();
-  const isRTL = i18n.language === 'ar';
+  const isRTL = i18n.language === "ar";
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -110,23 +117,21 @@ export const StatsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
+          className="text-center mb-16">
           <motion.span
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4"
-          >
-            {t('stats.badge')}
+            className="inline-block px-4 py-2 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+            {t("stats.badge")}
           </motion.span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              {t('stats.title')}
+              {t("stats.title")}
             </span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            {t('stats.subtitle')}
+            {t("stats.subtitle")}
           </p>
         </motion.div>
 
@@ -139,14 +144,14 @@ export const StatsSection = () => {
                 key={stat.key}
                 initial={{ opacity: 0, y: 50, rotateX: -15 }}
                 animate={isInView ? { opacity: 1, y: 0, rotateX: 0 } : {}}
-                transition={{ 
-                  duration: 0.8, 
+                transition={{
+                  duration: 0.8,
                   delay: index * 0.15,
                   type: "spring",
-                  stiffness: 100
-                }}
-              >
-                <Card className={`
+                  stiffness: 100,
+                }}>
+                <Card
+                  className={`
                   group relative overflow-hidden p-8 h-full
                   bg-card/50 backdrop-blur-sm border-border/50
                   hover:border-primary/50 transition-all duration-500
@@ -154,12 +159,14 @@ export const StatsSection = () => {
                   hover:-translate-y-2
                 `}>
                   {/* Gradient background on hover */}
-                  <div className={`
+                  <div
+                    className={`
                     absolute inset-0 opacity-0 group-hover:opacity-10 
                     transition-opacity duration-500 
                     bg-gradient-to-br ${stat.gradient}
-                  `} />
-                  
+                  `}
+                  />
+
                   {/* Shimmer effect */}
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/5 to-transparent" />
@@ -172,15 +179,14 @@ export const StatsSection = () => {
                       w-16 h-16 rounded-2xl mb-6 flex items-center justify-center
                       bg-gradient-to-br ${stat.gradient}
                       shadow-lg ${stat.shadowColor}
-                    `}
-                  >
+                    `}>
                     <Icon className="w-8 h-8 text-white" />
                   </motion.div>
 
                   {/* Number */}
                   <div className="text-4xl md:text-5xl font-bold mb-3 text-foreground">
-                    <Counter 
-                      end={stat.value} 
+                    <Counter
+                      end={stat.value}
                       suffix={stat.suffix}
                       duration={2.5}
                     />
@@ -190,20 +196,22 @@ export const StatsSection = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {t(`stats.${stat.key}.title`)}
                   </h3>
-                  
+
                   {/* Description */}
                   <p className="text-sm text-muted-foreground">
                     {t(`stats.${stat.key}.description`)}
                   </p>
 
                   {/* Bottom accent line */}
-                  <div className={`
+                  <div
+                    className={`
                     absolute bottom-0 left-0 right-0 h-1 
                     bg-gradient-to-r ${stat.gradient}
                     transform scale-x-0 group-hover:scale-x-100
                     transition-transform duration-500 origin-left
-                    ${isRTL ? 'origin-right' : 'origin-left'}
-                  `} />
+                    ${isRTL ? "origin-right" : "origin-left"}
+                  `}
+                  />
                 </Card>
               </motion.div>
             );

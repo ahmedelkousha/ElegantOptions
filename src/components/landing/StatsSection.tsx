@@ -13,40 +13,40 @@ interface CounterProps {
 
 const Counter = ({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) => {
   const [count, setCount] = useState(0);
-  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   useEffect(() => {
-    if (!isInView || hasAnimated) return;
-    
-    setHasAnimated(true);
-    let startTime: number;
-    let animationId: number;
-    
+    const hasIntersectionObserver =
+      typeof window !== 'undefined' && 'IntersectionObserver' in window;
+
+    // If IntersectionObserver isn't supported, animate immediately.
+    if ((hasIntersectionObserver && !isInView) || end === 0) return;
+
+    let startTime = 0;
+    let animationId = 0;
+
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
-      
+
       // Easing function for smooth animation
       const easeOutQuart = 1 - Math.pow(1 - progress, 4);
       setCount(Math.floor(easeOutQuart * end));
-      
+
       if (progress < 1) {
         animationId = requestAnimationFrame(animate);
       } else {
         setCount(end);
       }
     };
-    
+
     animationId = requestAnimationFrame(animate);
-    
+
     return () => {
-      if (animationId) {
-        cancelAnimationFrame(animationId);
-      }
+      if (animationId) cancelAnimationFrame(animationId);
     };
-  }, [isInView, end, duration, hasAnimated]);
+  }, [isInView, end, duration]);
 
   return (
     <span ref={ref} className="tabular-nums">

@@ -28,7 +28,7 @@ export const Footer = () => {
       <div className="container mx-auto px-4 md:px-8 py-12 md:py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Brand */}
-          <div className={`lg:col-span-2 ${isRTL ? 'text-right' : ''}`}>
+          <div className={`lg:col-span-2 ${isRTL ? 'text-right' : 'text-left'}`}>
             <motion.div
               whileHover={{ scale: 1.02 }}
               className="flex items-center gap-3 mb-4"
@@ -44,7 +44,7 @@ export const Footer = () => {
             </p>
             
             {/* Social Links */}
-            <div className={`flex gap-3 ${isRTL ? 'justify-end' : ''}`}>
+            <div className={`flex gap-3 ${isRTL ? 'justify-start' : ''}`}>
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -66,7 +66,7 @@ export const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className={isRTL ? 'text-right' : ''}>
+          <div className={isRTL ? 'text-right' : 'text-left'}>
             <h4 className={`font-semibold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
               {t('footer.quickLinks')}
             </h4>
@@ -87,7 +87,7 @@ export const Footer = () => {
           </div>
 
           {/* Contact */}
-          <div className={isRTL ? 'text-right' : ''}>
+          <div className={isRTL ? 'text-right' : 'text-left'}>
             <h4 className={`font-semibold mb-4 ${isRTL ? 'font-arabic' : ''}`}>
               {t('footer.contact')}
             </h4>

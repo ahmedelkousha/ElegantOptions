@@ -11,28 +11,31 @@ export const translations = {
         pricing: "Pricing",
         contact: "Contact",
       },
-      
+
       // Hero Section
       hero: {
         badge: "AI-Powered Solutions",
         title: "Transform Your Business",
         titleHighlight: "With Smart AI",
-        subtitle: "Elegant Options delivers cutting-edge AI solutions for WhatsApp automation, intelligent customer service, and smart business growth strategies.",
+        subtitle:
+          "Elegant Options delivers cutting-edge AI solutions for WhatsApp automation, intelligent customer service, and smart business growth strategies.",
         cta: "Get Started",
         ctaSecondary: "Learn More",
         scrollDown: "Scroll to explore",
       },
-      
+
       // About Section
       about: {
         badge: "About Us",
         title: "Empowering Businesses",
         titleHighlight: "Through Innovation",
-        description: "Elegant Options is a leading provider of AI-powered business solutions, specializing in WhatsApp Business API integration, intelligent customer engagement, and marketing automation.",
+        description:
+          "Elegant Options is a leading provider of AI-powered business solutions, specializing in WhatsApp Business API integration, intelligent customer engagement, and marketing automation.",
         values: {
           smart: {
             title: "Smart Support",
-            description: "Intelligent customer service through advanced AI channels",
+            description:
+              "Intelligent customer service through advanced AI channels",
           },
           automation: {
             title: "Marketing Automation",
@@ -48,105 +51,134 @@ export const translations = {
           },
         },
       },
-      
+
       // Services Section
       services: {
         badge: "Our Services",
         title: "Comprehensive Solutions",
         titleHighlight: "For Your Business",
-        subtitle: "Discover our suite of AI-powered tools designed to transform your customer engagement and business operations.",
-        
+        subtitle:
+          "Discover our suite of AI-powered tools designed to transform your customer engagement and business operations.",
+
         whatsapp: {
           title: "WhatsApp Business API",
-          description: "Official WhatsApp integration with automated messaging, campaign management, and intelligent flow automation.",
-          features: ["Official API Integration", "Automated Campaigns", "Smart Dashboard", "Analytics & Reports"],
+          description:
+            "Official WhatsApp integration with automated messaging, campaign management, and intelligent flow automation.",
+          features: [
+            "Official API Integration",
+            "Automated Campaigns",
+            "Smart Dashboard",
+            "Analytics & Reports",
+          ],
         },
         aiAgent: {
           title: "AI Agent",
-          description: "24/7 intelligent customer service with multi-language support and seamless CRM integration.",
-          features: ["24/7 Availability", "Multi-language Support", "CRM Integration", "Context-Aware Responses"],
+          description:
+            "24/7 intelligent customer service with multi-language support and seamless CRM integration.",
+          features: [
+            "24/7 Availability",
+            "Multi-language Support",
+            "CRM Integration",
+            "Context-Aware Responses",
+          ],
         },
         reviews: {
           title: "Review Booster System",
-          description: "Automated review collection with AI-powered response management and Google Business integration.",
-          features: ["Automated Collection", "AI Responses", "Google Integration", "Reputation Analytics"],
+          description:
+            "Automated review collection with AI-powered response management and Google Business integration.",
+          features: [
+            "Automated Collection",
+            "AI Responses",
+            "Google Integration",
+            "Reputation Analytics",
+          ],
         },
         website: {
           title: "Smart Website Integration",
-          description: "AI chat embedded directly on your website with booking systems and full CRM synchronization.",
-          features: ["Website AI Chat", "Booking Integration", "Full CRM Sync", "Lead Capture"],
+          description:
+            "AI chat embedded directly on your website with booking systems and full CRM synchronization.",
+          features: [
+            "Website AI Chat",
+            "Booking Integration",
+            "Full CRM Sync",
+            "Lead Capture",
+          ],
         },
       },
-      
+
       // Pricing Section
       pricing: {
         badge: "Pricing Plans",
         title: "Choose Your",
         titleHighlight: "Perfect Plan",
-        subtitle: "Flexible pricing options designed to scale with your business needs.",
+        subtitle:
+          "Flexible pricing options designed to scale with your business needs.",
         monthly: "/month",
         currency: "KWD",
         popular: "Most Popular",
         cta: "Get Started",
-        
+
         starter: {
           name: "Starter",
-          price: "XX",
-          description: "Placeholder description for starter plan",
-          features: [
-            "Feature placeholder 1",
-            "Feature placeholder 2",
-            "Feature placeholder 3",
+          limitedOffer: "Limited Offer",
+          price: "19",
+          description: "Perfect for first-time users",
+          Features: [
+            "Official WhatsApp API",
+            "Review Booster",
+            "Performance Tracking Dashboard",
+            "Meta Secure and Certified",
+            "100 Free Messages",
           ],
         },
         essential: {
           name: "Essential",
           price: "49",
           description: "Perfect for small businesses getting started",
-          features: [
-            "WhatsApp Business API",
-            "Basic AI Agent",
-            "Up to 1,000 messages/month",
-            "Email Support",
-            "Basic Analytics",
+          Features: [
+            "Everything included in the Starter Package",
+            "Integrated CRM system for customer management",
+            "Automated customer messaging (confirmation, invoices, follow-up)",
+            "Marketing messages to increase sales",
+            "1000 free messages",
           ],
         },
         professional: {
           name: "Professional",
           price: "90",
           description: "Ideal for growing businesses",
-          features: [
-            "Everything in Essential",
-            "Advanced AI Agent",
-            "Up to 5,000 messages/month",
-            "Review Booster System",
-            "Priority Support",
-            "Advanced Analytics",
+          Features: [
+            "Everything in the Essential package",
+            "Google Business Profile management to boost visibility",
+            "AI-powered customer service (WhatsApp, Instagram, Facebook)",
+            "Advanced conversation automation to increase conversions",
+            "AI-powered automatic responses to reviews (positive and negative)",
+            "2000 free messages",
           ],
         },
         advanced: {
           name: "Advanced",
-          price: "120",
+          price: "Contact us to customize services",
           description: "For enterprises needing full power",
-          features: [
-            "Everything in Professional",
-            "Unlimited Messages",
-            "Website Integration",
-            "Custom AI Training",
-            "Dedicated Account Manager",
-            "API Access",
-            "White-label Options",
+          Features: [
+            "Everything in the Professional Package",
+            "Comprehensive integration and automation of all company systems",
+            "Advanced AI Agent for understanding and analysis",
+            "Smart Website",
+            "Automated Appointment Booking System",
+            "Unlimited Messaging",
           ],
         },
       },
-      
+
       // Contact Section
       contact: {
         badge: "Get In Touch",
         title: "Let's Start Your",
         titleHighlight: "Digital Journey",
-        subtitle: "Ready to transform your business? Contact us today and discover how our AI solutions can help you grow.",
-        
+        subtitle:
+          "Ready to transform your business? Contact us today and discover how our AI solutions can help you grow.",
+
         form: {
           name: "Your Name",
           email: "Your Email",
@@ -157,17 +189,18 @@ export const translations = {
           success: "Message sent successfully!",
           error: "Failed to send message. Please try again.",
         },
-        
+
         info: {
           phone: "+965 66305551",
           email: "Info@elegant-options.com",
           address: "Salmiya, Block 10, Kuwait 11010",
         },
       },
-      
+
       // Footer
       footer: {
-        description: "Empowering businesses with AI-powered solutions for smarter customer engagement and sustainable growth.",
+        description:
+          "Empowering businesses with AI-powered solutions for smarter customer engagement and sustainable growth.",
         quickLinks: "Quick Links",
         services: "Services",
         contact: "Contact",
@@ -180,22 +213,27 @@ export const translations = {
       stats: {
         badge: "Why Choose Us",
         title: "Numbers That Speak",
-        subtitle: "Real results that demonstrate our commitment to your success",
+        subtitle:
+          "Real results that demonstrate our commitment to your success",
         messageOpenRate: {
           title: "Message Open Rate",
-          description: "WhatsApp messages have the highest open rate compared to any other channel",
+          description:
+            "WhatsApp messages have the highest open rate compared to any other channel",
         },
         costReduction: {
           title: "Cost Reduction",
-          description: "Reduce customer service costs with AI-powered automation",
+          description:
+            "Reduce customer service costs with AI-powered automation",
         },
         customerService: {
           title: "Customer Service",
-          description: "Round-the-clock availability with instant response times",
+          description:
+            "Round-the-clock availability with instant response times",
         },
         fullAutomation: {
           title: "Full Automation",
-          description: "Complete workflow automation from inquiry to conversion",
+          description:
+            "Complete workflow automation from inquiry to conversion",
         },
       },
 
@@ -204,7 +242,8 @@ export const translations = {
         badge: "Testimonials",
         title: "What Our Clients",
         titleHighlight: "Say About Us",
-        subtitle: "Discover how businesses like yours have transformed their operations with our AI solutions.",
+        subtitle:
+          "Discover how businesses like yours have transformed their operations with our AI solutions.",
         trustedBy: "Trusted by Leading Companies",
       },
 
@@ -213,13 +252,13 @@ export const translations = {
         badge: "Case Studies",
         title: "Success Stories",
         titleHighlight: "That Inspire",
-        subtitle: "Explore how we have helped businesses achieve remarkable results with our AI-powered solutions.",
+        subtitle:
+          "Explore how we have helped businesses achieve remarkable results with our AI-powered solutions.",
         cta: "View All Projects",
       },
     },
   },
-  
-  
+
   ar: {
     translation: {
       // Navigation
@@ -232,28 +271,31 @@ export const translations = {
         pricing: "الأسعار",
         contact: "تواصل معنا",
       },
-      
+
       // Hero Section
       hero: {
         badge: "حلول ذكية بالذكاء الاصطناعي",
         title: "حوّل أعمالك",
         titleHighlight: "مع الذكاء الاصطناعي",
-        subtitle: "تقدم إليجانت أوبشنز حلولاً متطورة للذكاء الاصطناعي لأتمتة واتساب وخدمة العملاء الذكية واستراتيجيات نمو الأعمال.",
+        subtitle:
+          "تقدم إليجانت أوبشنز حلولاً متطورة للذكاء الاصطناعي لأتمتة واتساب وخدمة العملاء الذكية واستراتيجيات نمو الأعمال.",
         cta: "ابدأ الآن",
         ctaSecondary: "اعرف المزيد",
         scrollDown: "اسحب للاستكشاف",
       },
-      
+
       // About Section
       about: {
         badge: "من نحن",
         title: "تمكين الأعمال",
         titleHighlight: "من خلال الابتكار",
-        description: "إليجانت أوبشنز هي شركة رائدة في تقديم حلول الأعمال المدعومة بالذكاء الاصطناعي، متخصصة في تكامل واتساب للأعمال والتفاعل الذكي مع العملاء وأتمتة التسويق.",
+        description:
+          "إليجانت أوبشنز هي شركة رائدة في تقديم حلول الأعمال المدعومة بالذكاء الاصطناعي، متخصصة في تكامل واتساب للأعمال والتفاعل الذكي مع العملاء وأتمتة التسويق.",
         values: {
           smart: {
             title: "دعم ذكي",
-            description: "خدمة عملاء ذكية من خلال قنوات الذكاء الاصطناعي المتقدمة",
+            description:
+              "خدمة عملاء ذكية من خلال قنوات الذكاء الاصطناعي المتقدمة",
           },
           automation: {
             title: "أتمتة التسويق",
@@ -269,36 +311,61 @@ export const translations = {
           },
         },
       },
-      
+
       // Services Section
       services: {
         badge: "خدماتنا",
         title: "حلول شاملة",
         titleHighlight: "لأعمالك",
-        subtitle: "اكتشف مجموعتنا من الأدوات المدعومة بالذكاء الاصطناعي المصممة لتحويل تفاعل العملاء وعمليات الأعمال.",
-        
+        subtitle:
+          "اكتشف مجموعتنا من الأدوات المدعومة بالذكاء الاصطناعي المصممة لتحويل تفاعل العملاء وعمليات الأعمال.",
+
         whatsapp: {
           title: "واتساب للأعمال API",
-          description: "تكامل واتساب الرسمي مع الرسائل الآلية وإدارة الحملات وأتمتة التدفق الذكي.",
-          features: ["تكامل API الرسمي", "حملات آلية", "لوحة تحكم ذكية", "تحليلات وتقارير"],
+          description:
+            "تكامل واتساب الرسمي مع الرسائل الآلية وإدارة الحملات وأتمتة التدفق الذكي.",
+          features: [
+            "تكامل API الرسمي",
+            "حملات آلية",
+            "لوحة تحكم ذكية",
+            "تحليلات وتقارير",
+          ],
         },
         aiAgent: {
           title: "وكيل الذكاء الاصطناعي",
-          description: "خدمة عملاء ذكية على مدار الساعة مع دعم متعدد اللغات وتكامل سلس مع نظام إدارة علاقات العملاء.",
-          features: ["متاح 24/7", "دعم متعدد اللغات", "تكامل CRM", "ردود واعية بالسياق"],
+          description:
+            "خدمة عملاء ذكية على مدار الساعة مع دعم متعدد اللغات وتكامل سلس مع نظام إدارة علاقات العملاء.",
+          features: [
+            "متاح 24/7",
+            "دعم متعدد اللغات",
+            "تكامل CRM",
+            "ردود واعية بالسياق",
+          ],
         },
         reviews: {
           title: "نظام تعزيز المراجعات",
-          description: "جمع المراجعات الآلي مع إدارة الردود بالذكاء الاصطناعي وتكامل جوجل للأعمال.",
-          features: ["جمع آلي", "ردود بالذكاء الاصطناعي", "تكامل جوجل", "تحليلات السمعة"],
+          description:
+            "جمع المراجعات الآلي مع إدارة الردود بالذكاء الاصطناعي وتكامل جوجل للأعمال.",
+          features: [
+            "جمع آلي",
+            "ردود بالذكاء الاصطناعي",
+            "تكامل جوجل",
+            "تحليلات السمعة",
+          ],
         },
         website: {
           title: "تكامل الموقع الذكي",
-          description: "دردشة الذكاء الاصطناعي مدمجة مباشرة في موقعك مع أنظمة الحجز ومزامنة CRM الكاملة.",
-          features: ["دردشة AI للموقع", "تكامل الحجز", "مزامنة CRM كاملة", "التقاط العملاء المحتملين"],
+          description:
+            "دردشة الذكاء الاصطناعي مدمجة مباشرة في موقعك مع أنظمة الحجز ومزامنة CRM الكاملة.",
+          features: [
+            "دردشة AI للموقع",
+            "تكامل الحجز",
+            "مزامنة CRM كاملة",
+            "التقاط العملاء المحتملين",
+          ],
         },
       },
-      
+
       // Pricing Section
       pricing: {
         badge: "خطط الأسعار",
@@ -309,15 +376,18 @@ export const translations = {
         currency: "د.ك",
         popular: "الأكثر شعبية",
         cta: "ابدأ الآن",
-        
+
         starter: {
           name: "البداية",
-          price: "XX",
-          description: "وصف مؤقت لخطة البداية",
+          limitedOffer: "عرض محدود",
+          price: "19",
+          description: "مثالية للمستخدمين الجدد",
           features: [
-            "ميزة مؤقتة 1",
-            "ميزة مؤقتة 2",
-            "ميزة مؤقتة 3",
+            "واتساب موثق رسمي (API)",
+            "نظام التقييم الذكي (Review Booster)",
+            "لوحة تحكم لمتابعة الأداء",
+            "نظام آمن ومعتمد من Meta",
+            "100 رسالة مجانية",
           ],
         },
         essential: {
@@ -325,11 +395,11 @@ export const translations = {
           price: "49",
           description: "مثالية للشركات الصغيرة في البداية",
           features: [
-            "واتساب للأعمال API",
-            "وكيل ذكاء اصطناعي أساسي",
-            "حتى 1,000 رسالة/شهرياً",
-            "دعم عبر البريد الإلكتروني",
-            "تحليلات أساسية",
+            "كل ما في باقة البداية",
+            "نظام CRM متكامل لإدارة العملاء",
+            "أتمتة رسائل العملاء (تأكيد، فواتير، متابعة)",
+            "رسائل تسويقية لزيادة المبيعات",
+            "1000 رسالة مجانية",
           ],
         },
         professional: {
@@ -337,37 +407,37 @@ export const translations = {
           price: "90",
           description: "مثالية للشركات النامية",
           features: [
-            "كل مميزات الأساسية",
-            "وكيل ذكاء اصطناعي متقدم",
-            "حتى 5,000 رسالة/شهرياً",
-            "نظام تعزيز المراجعات",
-            "دعم أولوية",
-            "تحليلات متقدمة",
+            "كل ما في الباقة الأساسية",
+            "إدارة Google Business Profile لرفع الظهور",
+            "خدمة عملاء بالذكاء الاصطناعي (واتساب، إنستغرام، فيسبوك)",
+            "أتمتة متقدمة للمحادثات  لرفع التحويل",
+            "رد آلي عبر AI على التقييمات (إيجابية وسلبية)",
+            "2000 رسالة مجانية",
           ],
         },
         advanced: {
           name: "المتقدمة",
-          price: "120",
+          price: "تواصل معنا لتخصيص الخدمات",
           description: "للمؤسسات التي تحتاج القوة الكاملة",
           features: [
-            "كل مميزات الاحترافية",
+            "كل ما في الباقة الاحترافية",
+            "ربط وأتمتة شاملة لكافة أنظمة الشركة",
+            "وكيل ذكاء اصطناعي (AI Agent) متطور للفهم والتحليل",
+            "موقع إلكتروني ذكي",
+            "نظام حجز مواعيد آلي",
             "رسائل غير محدودة",
-            "تكامل الموقع",
-            "تدريب ذكاء اصطناعي مخصص",
-            "مدير حساب مخصص",
-            "وصول API",
-            "خيارات العلامة البيضاء",
           ],
         },
       },
-      
+
       // Contact Section
       contact: {
         badge: "تواصل معنا",
         title: "لنبدأ رحلتك",
         titleHighlight: "الرقمية",
-        subtitle: "هل أنت مستعد لتحويل أعمالك؟ تواصل معنا اليوم واكتشف كيف يمكن لحلول الذكاء الاصطناعي لدينا مساعدتك على النمو.",
-        
+        subtitle:
+          "هل أنت مستعد لتحويل أعمالك؟ تواصل معنا اليوم واكتشف كيف يمكن لحلول الذكاء الاصطناعي لدينا مساعدتك على النمو.",
+
         form: {
           name: "اسمك",
           email: "بريدك الإلكتروني",
@@ -378,17 +448,18 @@ export const translations = {
           success: "تم إرسال الرسالة بنجاح!",
           error: "فشل إرسال الرسالة. يرجى المحاولة مرة أخرى.",
         },
-        
+
         info: {
           phone: "+965 66305551",
           email: "Info@elegant-options.com",
           address: "السالمية، بلوك 10، الكويت 11010",
         },
       },
-      
+
       // Footer
       footer: {
-        description: "تمكين الشركات بحلول مدعومة بالذكاء الاصطناعي للتفاعل الأذكى مع العملاء والنمو المستدام.",
+        description:
+          "تمكين الشركات بحلول مدعومة بالذكاء الاصطناعي للتفاعل الأذكى مع العملاء والنمو المستدام.",
         quickLinks: "روابط سريعة",
         services: "الخدمات",
         contact: "تواصل",
@@ -425,7 +496,8 @@ export const translations = {
         badge: "آراء العملاء",
         title: "ماذا يقول عملاؤنا",
         titleHighlight: "عنا",
-        subtitle: "اكتشف كيف حولت الشركات مثل شركتك عملياتها مع حلول الذكاء الاصطناعي لدينا.",
+        subtitle:
+          "اكتشف كيف حولت الشركات مثل شركتك عملياتها مع حلول الذكاء الاصطناعي لدينا.",
         trustedBy: "موثوق من قبل الشركات الرائدة",
       },
 
@@ -434,7 +506,8 @@ export const translations = {
         badge: "دراسات الحالة",
         title: "قصص النجاح",
         titleHighlight: "الملهمة",
-        subtitle: "اكتشف كيف ساعدنا الشركات على تحقيق نتائج مذهلة مع حلولنا المدعومة بالذكاء الاصطناعي.",
+        subtitle:
+          "اكتشف كيف ساعدنا الشركات على تحقيق نتائج مذهلة مع حلولنا المدعومة بالذكاء الاصطناعي.",
         cta: "عرض جميع المشاريع",
       },
     },

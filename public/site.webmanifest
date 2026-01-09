@@ -1,0 +1,53 @@
+{
+  "name": "Elegant Options - AI-Powered WhatsApp Business Solutions",
+  "short_name": "Elegant Options",
+  "description": "AI-powered business solutions specializing in WhatsApp Business API integration, intelligent customer engagement, and marketing automation in Kuwait",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/preview-logo.png",
+      "sizes": "1536x1024",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#6366f1",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "auto",
+  "categories": ["business", "productivity"],
+  "i18n": [
+    {
+      "lang": "en",
+      "name": "Elegant Options - AI-Powered WhatsApp Business Solutions",
+      "short_name": "Elegant Options",
+      "description": "AI-powered business solutions specializing in WhatsApp Business API integration in Kuwait"
+    },
+    {
+      "lang": "ar",
+      "name": "إليجانت أوبشنز - حلول واتساب للأعمال بالذكاء الاصطناعي",
+      "short_name": "إليجانت أوبشنز",
+      "description": "حلول أعمال مدعومة بالذكاء الاصطناعي متخصصة في تكامل واتساب للأعمال في الكويت"
+    }
+  ]
+}

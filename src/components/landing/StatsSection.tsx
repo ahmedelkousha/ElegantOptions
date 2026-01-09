@@ -13,13 +13,17 @@ interface CounterProps {
 
 const Counter = ({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) => {
   const [count, setCount] = useState(0);
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
 
   useEffect(() => {
-    if (!isInView) return;
+    if (!isInView || hasAnimated) return;
     
+    setHasAnimated(true);
     let startTime: number;
+    let animationId: number;
+    
     const animate = (currentTime: number) => {
       if (!startTime) startTime = currentTime;
       const progress = Math.min((currentTime - startTime) / (duration * 1000), 1);
@@ -29,14 +33,20 @@ const Counter = ({ end, suffix = '', prefix = '', duration = 2 }: CounterProps) 
       setCount(Math.floor(easeOutQuart * end));
       
       if (progress < 1) {
-        requestAnimationFrame(animate);
+        animationId = requestAnimationFrame(animate);
       } else {
         setCount(end);
       }
     };
     
-    requestAnimationFrame(animate);
-  }, [isInView, end, duration]);
+    animationId = requestAnimationFrame(animate);
+    
+    return () => {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+      }
+    };
+  }, [isInView, end, duration, hasAnimated]);
 
   return (
     <span ref={ref} className="tabular-nums">

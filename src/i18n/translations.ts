@@ -123,7 +123,7 @@ export const translations = {
           limitedOffer: "Limited Offer",
           price: "19",
           description: "Perfect for first-time users",
-          Features: [
+          features: [
             "Official WhatsApp API",
             "Review Booster",
             "Performance Tracking Dashboard",
@@ -135,7 +135,7 @@ export const translations = {
           name: "Essential",
           price: "49",
           description: "Perfect for small businesses getting started",
-          Features: [
+          features: [
             "Everything included in the Starter Package",
             "Integrated CRM system for customer management",
             "Automated customer messaging (confirmation, invoices, follow-up)",
@@ -147,7 +147,7 @@ export const translations = {
           name: "Professional",
           price: "90",
           description: "Ideal for growing businesses",
-          Features: [
+          features: [
             "Everything in the Essential package",
             "Google Business Profile management to boost visibility",
             "AI-powered customer service (WhatsApp, Instagram, Facebook)",
@@ -160,7 +160,7 @@ export const translations = {
           name: "Advanced",
           price: "Contact us to customize services",
           description: "For enterprises needing full power",
-          Features: [
+          features: [
             "Everything in the Professional Package",
             "Comprehensive integration and automation of all company systems",
             "Advanced AI Agent for understanding and analysis",

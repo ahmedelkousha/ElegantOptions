@@ -257,8 +257,8 @@ export const PricingSection = () => {
                         initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{ delay: 0.1 }}
-                        className={`flex justify-between gap-3 ${
-                          isRTL ? "flex-row-reverse text-right" : ""
+                        className={`flex  gap-3 ${
+                          isRTL ? "flex-row-reverse text-right justify-between" : "justify-start"
                         }`}>
                         <motion.div
                           className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5"

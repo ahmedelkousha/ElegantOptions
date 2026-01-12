@@ -5,6 +5,17 @@ import { Star, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
+import logo1 from "@/assets/partnersLogos/logo1.png";
+import logo2 from "@/assets/partnersLogos/logo2.png";
+import logo3 from "@/assets/partnersLogos/logo3.png";
+import logo4 from "@/assets/partnersLogos/logo4.png";
+import logo5 from "@/assets/partnersLogos/logo5.png";
+import logo6 from "@/assets/partnersLogos/logo6.png";
+import person1 from "@/assets/person1.jpg";
+import person2 from "@/assets/person2.jpg";
+import person3 from "@/assets/person3.jpg";
+import person4 from "@/assets/person4.jpg";
+
 import "swiper/css";
 
 const testimonials = [
@@ -20,7 +31,7 @@ const testimonials = [
       "حولت إليجانت أوبشنز خدمة العملاء لدينا بالكامل. يتعامل وكيل الذكاء الاصطناعي مع 80٪ من الاستفسارات تلقائياً، مما يوفر لنا ساعات لا تحصى.",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+      person1,
   },
   {
     id: 2,
@@ -34,7 +45,7 @@ const testimonials = [
       "كان تكامل واتساب للأعمال سلساً للغاية. قفزت معدلات فتح حملاتنا إلى 98٪ وزادت التحويلات بنسبة 40٪.",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+      person2,
   },
   {
     id: 3,
@@ -48,7 +59,7 @@ const testimonials = [
       "ساعدنا نظام تعزيز المراجعات في الحصول على أكثر من 200 مراجعة جديدة على جوجل في 3 أشهر فقط. سمعتنا الإلكترونية لم تكن أفضل من ذلك.",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+      person3,
   },
   {
     id: 4,
@@ -62,44 +73,33 @@ const testimonials = [
       "أدى تنفيذ مجموعة الأتمتة الكاملة إلى تقليل تكاليفنا التشغيلية بنسبة 60٪. كان العائد على الاستثمار واضحاً خلال الشهر الأول.",
     rating: 5,
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+      person4,
   },
 ];
 
 const partners = [
   {
     name: "Slack",
-    logo: "https://cdn.worldvectorlogo.com/logos/slack-new-logo.svg",
+    logo: logo1,
   },
-  { name: "Trello", logo: "https://cdn.worldvectorlogo.com/logos/trello.svg" },
+  { name: "Trello", logo: logo2 },
   {
     name: "Zoom",
-    logo: "https://cdn.worldvectorlogo.com/logos/zoom-communications-logo.svg",
+    logo: logo3,
   },
   {
     name: "Dropbox",
-    logo: "https://cdn.worldvectorlogo.com/logos/dropbox-1.svg",
+    logo: logo4,
   },
   {
     name: "Monday",
-    logo: "https://cdn.worldvectorlogo.com/logos/monday-1.svg",
+    logo: logo5,
   },
   {
     name: "Shopify",
-    logo: "https://cdn.worldvectorlogo.com/logos/shopify.svg",
+    logo: logo6,
   },
-  {
-    name: "Hubspot",
-    logo: "https://cdn.worldvectorlogo.com/logos/hubspot.svg",
-  },
-  {
-    name: "Stripe",
-    logo: "https://cdn.worldvectorlogo.com/logos/stripe-4.svg",
-  },
-  {
-    name: "Zendesk",
-    logo: "https://cdn.worldvectorlogo.com/logos/zendesk-1.svg",
-  },
+ 
 ];
 
 export const TestimonialsSection = () => {
@@ -320,9 +320,9 @@ export const TestimonialsSection = () => {
               grabCursor={true}
               breakpoints={{
                 640: { slidesPerView: 3 },
-                768: { slidesPerView: 4 },
-                1024: { slidesPerView: 5 },
-                1280: { slidesPerView: 6 },
+                768: { slidesPerView: 3 },
+                1024: { slidesPerView: 4 },
+                1280: { slidesPerView: 4 },
               }}
               className="partners-swiper">
               {partners.map((partner, index) => (
@@ -333,7 +333,7 @@ export const TestimonialsSection = () => {
                       alt={partner.name}
                       loading="lazy"
                       decoding="async"
-                      className="max-w-8 max-h-8 object-contain scale-[1.8] md:scale-[2] transform"
+                      className="max-w-16 max-h-16 object-contain scale-[1.8] md:scale-[2] transform"
                     />
                   </div>
                 </SwiperSlide>

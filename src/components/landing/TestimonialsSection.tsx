@@ -11,6 +11,10 @@ import logo3 from "@/assets/partnersLogos/logo3.png";
 import logo4 from "@/assets/partnersLogos/logo4.png";
 import logo5 from "@/assets/partnersLogos/logo5.png";
 import logo6 from "@/assets/partnersLogos/logo6.png";
+import logo7 from "@/assets/partnersLogos/logo7.jpeg";
+import logo8 from "@/assets/partnersLogos/logo8.jpeg";
+import logo9 from "@/assets/partnersLogos/logo9.png";
+
 import person1 from "@/assets/person1.jpg";
 import person2 from "@/assets/person2.jpg";
 import person3 from "@/assets/person3.jpg";
@@ -30,8 +34,7 @@ const testimonials = [
     contentAr:
       "حولت إليجانت أوبشنز خدمة العملاء لدينا بالكامل. يتعامل وكيل الذكاء الاصطناعي مع 80٪ من الاستفسارات تلقائياً، مما يوفر لنا ساعات لا تحصى.",
     rating: 5,
-    image:
-      person1,
+    image: person1,
   },
   {
     id: 2,
@@ -44,8 +47,7 @@ const testimonials = [
     contentAr:
       "كان تكامل واتساب للأعمال سلساً للغاية. قفزت معدلات فتح حملاتنا إلى 98٪ وزادت التحويلات بنسبة 40٪.",
     rating: 5,
-    image:
-      person2,
+    image: person2,
   },
   {
     id: 3,
@@ -58,8 +60,7 @@ const testimonials = [
     contentAr:
       "ساعدنا نظام تعزيز المراجعات في الحصول على أكثر من 200 مراجعة جديدة على جوجل في 3 أشهر فقط. سمعتنا الإلكترونية لم تكن أفضل من ذلك.",
     rating: 5,
-    image:
-      person3,
+    image: person3,
   },
   {
     id: 4,
@@ -72,34 +73,44 @@ const testimonials = [
     contentAr:
       "أدى تنفيذ مجموعة الأتمتة الكاملة إلى تقليل تكاليفنا التشغيلية بنسبة 60٪. كان العائد على الاستثمار واضحاً خلال الشهر الأول.",
     rating: 5,
-    image:
-      person4,
+    image: person4,
   },
 ];
 
 const partners = [
   {
-    name: "Slack",
+    name: "Tarboush",
     logo: logo1,
   },
-  { name: "Trello", logo: logo2 },
+  { name: "Dana Cosmetic", logo: logo2 },
   {
-    name: "Zoom",
+    name: "Fatoush",
     logo: logo3,
   },
   {
-    name: "Dropbox",
+    name: "Khabaz Restaurant",
     logo: logo4,
   },
   {
-    name: "Monday",
+    name: "Tibe Organization",
     logo: logo5,
   },
   {
-    name: "Shopify",
+    name: "Abu Haitham Restaurant",
     logo: logo6,
   },
- 
+  {
+    name: "Authentic Digital Marketing Services",
+    logo: logo7,
+  },
+  {
+    name: "Signora",
+    logo: logo8,
+  },
+  {
+    name: "Maldives Spa",
+    logo: logo9,
+  },
 ];
 
 export const TestimonialsSection = () => {

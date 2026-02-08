@@ -84,7 +84,7 @@ export const AboutSection = () => {
               {t('about.title')}
               <br />
               <motion.span 
-                className="text-gradient inline-block"
+                className="text-gradient inline"
                 initial={{ opacity: 0, x: -30 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.5 }}

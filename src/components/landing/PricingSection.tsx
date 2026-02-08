@@ -1,10 +1,23 @@
 import { useTranslation } from "react-i18next";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { Check, Sparkles, Crown } from "lucide-react";
+import {
+  Check,
+  Sparkles,
+  Crown,
+  MessageSquare,
+  Zap,
+  Building2,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const plans = ["starter", "essential", "professional", "advanced"];
+const plans = [
+  "starter",
+  "essential",
+  "comprehensive",
+  "professional",
+  "enterprise",
+];
 
 export const PricingSection = () => {
   const { t, i18n } = useTranslation();
@@ -12,7 +25,6 @@ export const PricingSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-  // Parallax scroll effects
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -25,282 +37,381 @@ export const PricingSection = () => {
       id="pricing"
       ref={ref}
       className="section-container relative overflow-hidden">
-      {/* Cinematic Background */}
+      {/* Background */}
       <motion.div
         className="absolute inset-0 network-bg opacity-30"
         style={{ y: backgroundY }}
       />
 
-      {/* Floating elements */}
-      <motion.div
-        className="absolute top-1/4 right-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, -100]) }}
-      />
-      <motion.div
-        className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-accent/10 rounded-full blur-3xl"
-        style={{ y: useTransform(scrollYProgress, [0, 1], [0, 100]) }}
-      />
-
       <div className="container mx-auto relative z-10">
-        {/* Header with cinematic reveal */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 80 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 1 }}
           className="text-center mb-16">
-          <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6"
-            initial={{ opacity: 0, scale: 0.8, y: 20 }}
-            animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
             <Crown className="w-4 h-4 text-accent" />
             <span
-              className={`text-sm font-medium text-accent ${
-                isRTL ? "font-arabic" : ""
-              }`}>
+              className={`text-sm font-medium ${isRTL ? "font-arabic" : ""}`}>
               {t("pricing.badge")}
             </span>
-          </motion.div>
+          </div>
 
-          <motion.h2
+          <h2
             className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
               isRTL ? "font-arabic" : ""
-            }`}
-            initial={{ opacity: 0, y: 50 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}>
+            }`}>
             {t("pricing.title")}{" "}
-            <motion.span
-              className="text-gradient inline-block"
-              initial={{ opacity: 0, rotateX: -90 }}
-              animate={isInView ? { opacity: 1, rotateX: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.5 }}>
-              {t("pricing.titleHighlight")}
-            </motion.span>
-          </motion.h2>
+            <span className="text-gradient">{t("pricing.titleHighlight")}</span>
+          </h2>
 
-          <motion.p
+          <p
             className={`text-lg text-muted-foreground max-w-2xl mx-auto ${
               isRTL ? "font-arabic" : ""
-            }`}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}>
+            }`}>
             {t("pricing.subtitle")}
-          </motion.p>
+          </p>
         </motion.div>
 
-        {/* Pricing Cards with 3D staggered reveals */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-20 lg:gap-10 max-w-7xl mx-auto">
+        {/* Pricing Cards */}
+        <div className="flex flex-wrap justify-center gap-10 lg:gap-14 max-w-[1400px] mx-auto mb-16">
           {plans.map((plan, index) => {
             const isProfessional = plan === "professional";
             const isStarter = plan === "starter";
-            const isAdvanced = plan === "advanced";
+            const isEnterprise = plan === "enterprise";
+
             const features = t(`pricing.${plan}.features`, {
               returnObjects: true,
             }) as string[];
 
+            const oldPrice = t(`pricing.${plan}.oldPrice`);
+            const currentPrice = t(`pricing.${plan}.price`);
+
             return (
               <motion.div
                 key={plan}
-                initial={{
-                  opacity: 0,
-                  y: 120,
-                  rotateX: -20,
-                  scale: 0.85,
-                }}
-                animate={
-                  isInView
-                    ? {
-                        opacity: 1,
-                        y: 0,
-                        rotateX: 0,
-                        scale: 1,
-                      }
-                    : {}
-                }
-                transition={{
-                  duration: 1,
-                  delay: 0.02,
-                  ease: [0.25, 0.46, 0.45, 0.94],
-                }}
+                initial={{ opacity: 0, y: 120, scale: 0.9 }}
+                animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+                transition={{ duration: 0.3, delay: index * 0.1 }}
                 whileHover={{
-                  y: -20,
+                  y: -16,
                   scale: isProfessional ? 1.05 : 1.03,
-                  transition: { duration: 0.3 },
                 }}
-                className={`relative ${
-                  isProfessional ? "md:-mt-4 md:mb-4 z-10" : ""
+                className={`relative w-full sm:w-[252px] md:w-[300px] lg:w-[390px] xl:w-[380px] ${
+                  isProfessional ? "lg:-mt-6 z-10" : ""
                 }`}>
-                {/* Popular Badge with animation */}
-
+                {/* Badges */}
                 {isProfessional && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                    transition={{ delay: 1, duration: 0.5, type: "spring" }}
-                    className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <motion.div
-                      className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium"
-                      animate={{
-                        boxShadow: [
-                          "0 0 20px rgba(var(--primary), 0.3)",
-                          "0 0 40px rgba(var(--primary), 0.5)",
-                          "0 0 20px rgba(var(--primary), 0.3)",
-                        ],
-                      }}
-                      transition={{ duration: 2, repeat: Infinity }}>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                    <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium shadow-lg">
                       <Sparkles className="w-4 h-4" />
-                      <span className={`text-sm ${isRTL ? "font-arabic" : ""}`}>
-                        {t("pricing.popular")}
-                      </span>
-                    </motion.div>
-                  </motion.div>
+                      {t("pricing.popular")}
+                    </div>
+                  </div>
                 )}
+
                 {isStarter && (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                    animate={isInView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                    transition={{ delay: 1, duration: 0.5, type: "spring" }}
-                    className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
-                    <motion.div
-                      className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium"
-                      animate={{
-                        boxShadow: [
-                          "0 0 20px rgba(23, 99, 207, 0.3)",
-                          "0 0 40px rgba(23, 99, 207, 0.5)",
-                          "0 0 20px rgba(23, 99, 207, 0.3)",
-                        ],
-                      }}
-                      transition={{ duration: 2, repeat: Infinity }}>
+                  <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-20">
+                    <div className="flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-primary to-accent text-primary-foreground text-sm font-medium shadow-lg">
                       <Sparkles className="w-4 h-4" />
-                      <span className={`text-sm ${isRTL ? "font-arabic" : ""}`}>
-                        {t(`pricing.${plan}.limitedOffer`)}
-                      </span>
-                    </motion.div>
-                  </motion.div>
+                      {t(`pricing.${plan}.limitedOffer`)}
+                    </div>
+                  </div>
                 )}
 
+                {/* Card */}
                 <div
-                  className={`glass-card p-6 md:p-8 rounded-2xl h-full flex flex-col relative overflow-hidden ${
+                  className={`glass-card h-full p-6 md:p-8 rounded-2xl flex flex-col ${
                     isProfessional ? "border-primary/50 glow-primary" : ""
-                  }`}>
-                  {/* Shimmer effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full"
-                    animate={
-                      isProfessional ? { translateX: ["100%", "-100%"] } : {}
-                    }
-                    transition={{
-                      duration: 3,
-                      repeat: Infinity,
-                      repeatDelay: 2,
-                    }}
-                  />
-
-                  {/* Plan Name */}
-                  <motion.h3
-                    className={`text-xl font-bold mb-2 relative z-10 ${
+                  } ${isEnterprise ? "border-accent/50" : ""}`}>
+                  <h3
+                    className={`text-2xl font-bold mb-2 ${
                       isRTL ? "font-arabic" : ""
-                    }`}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.7 + index * 0.2 }}>
+                    }`}>
                     {t(`pricing.${plan}.name`)}
-                  </motion.h3>
+                  </h3>
 
-                  {/* Description */}
                   <p
-                    className={`text-sm text-muted-foreground mb-6 relative z-10 ${
+                    className={`text-sm text-muted-foreground mb-6 ${
                       isRTL ? "font-arabic" : ""
                     }`}>
                     {t(`pricing.${plan}.description`)}
                   </p>
 
-                  {/* Price with counter animation effect */}
-                  <motion.div
-                    className={`mb-6 relative z-10`}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ delay: 0.8 + index * 0.2, type: "spring" }}>
+                  {/* Price */}
+                  <div className="mb-6">
+                    {oldPrice && (
+                      <span className="text-sm line-through text-muted-foreground block">
+                        {oldPrice} {t("pricing.currency")}
+                      </span>
+                    )}
+
                     <div className="flex items-baseline gap-1">
                       <span
-                        className={`${
-                          isAdvanced
-                            ? "md:text-xl text-lg"
-                            : "md:text-5xl text-4xl"
-                        }   font-bold text-gradient`}>
-                        {t(`pricing.${plan}.price`)}
+                        className={`font-bold text-gradient ${
+                          isEnterprise ? "text-xl" : "text-4xl"
+                        } ${isRTL ? "font-arabic" : ""}`}>
+                        {currentPrice}
                       </span>
-                      <span
-                        className={`${
-                          isAdvanced ? "hidden" : ""
-                        } text-muted-foreground ${isRTL ? "font-arabic" : ""}`}>
-                        {t("pricing.currency")}
-                      </span>
+                      {!isEnterprise && (
+                        <span className="text-muted-foreground">
+                          {t("pricing.currency")}
+                        </span>
+                      )}
                     </div>
-                    <span
-                      className={`${
-                        isAdvanced ? "hidden" : ""
-                      } text-sm text-muted-foreground ${
-                        isRTL ? "font-arabic" : ""
-                      }`}>
-                      {t("pricing.monthly")}
-                    </span>
-                  </motion.div>
 
-                  {/* Features with staggered reveal */}
-                  <ul className="space-y-3 mb-8 flex-grow relative z-10">
-                    {features.map((feature, i) => (
-                      <motion.li
-                        key={i}
-                        initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
-                        animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ delay: 0.1 }}
-                        className={`flex  gap-3 ${
-                          isRTL ? "flex-row-reverse text-right justify-between" : "justify-start"
+                    {!isEnterprise && (
+                      <span
+                        className={`text-sm text-muted-foreground ${
+                          isRTL ? "font-arabic" : ""
                         }`}>
-                        <motion.div
-                          className="w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5"
-                          whileHover={{
-                            scale: 1.2,
-                            backgroundColor: "var(--primary-hsl)",
-                          }}>
+                        {t("pricing.monthly")}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Features */}
+                  <ul className="space-y-3 mb-8 flex-grow">
+                    {features.map((feature, i) => (
+                      <li
+                        key={i}
+                        className={`flex items-start gap-3 justify-start ${
+                          isRTL
+                            ? "flex-row-reverse text-right justify-between"
+                            : ""
+                        }`}>
+                        <div className="w-5 h-5 shrink-0 rounded-full bg-primary/20 flex items-center justify-center mt-0.5">
                           <Check className="w-3 h-3 text-primary" />
-                        </motion.div>
+                        </div>
                         <span
-                          className={`text-xs text-muted-foreground ${
+                          className={`text-xs 2xl:text-sm 2xl:text-[0.812rem] text-muted-foreground leading-relaxed ${
                             isRTL ? "font-arabic" : ""
                           }`}>
                           {feature}
                         </span>
-                      </motion.li>
+                      </li>
                     ))}
                   </ul>
 
-                  {/* CTA Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}>
-                    <Button
-                      className={`w-full relative z-10 ${
-                        isProfessional ? "glow-primary" : ""
-                      }`}
-                      variant={isProfessional ? "default" : "outline"}
-                      onClick={() =>
-                        document
-                          .getElementById("contact")
-                          ?.scrollIntoView({ behavior: "smooth" })
-                      }>
-                      <span className={isRTL ? "font-arabic" : ""}>
-                        {t("pricing.cta")}
-                      </span>
-                    </Button>
-                  </motion.div>
+                  {/* CTA */}
+                  <Button
+                    className={`w-full ${
+                      isProfessional || isEnterprise ? "glow-primary" : ""
+                    } ${isRTL ? "font-arabic" : ""}`}
+                    variant={
+                      isProfessional || isEnterprise ? "default" : "outline"
+                    }
+                    onClick={() => {
+                      const planName = t(`pricing.${plan}.name`);
+                      const message = isRTL
+                        ? `.مرحباً، أنا مهتم بخطة '${planName}'، اريد أن أعرف تفاصيل أكثر`
+                        : `Hello, I'm interested in the ${planName} plan, I need to know more details.`;
+                      const whatsappUrl = `https://wa.me/96566305551?text=${encodeURIComponent(
+                        message
+                      )}`;
+                      window.open(whatsappUrl, "_blank");
+                    }}>
+                    {t("pricing.cta")}
+                  </Button>
                 </div>
               </motion.div>
             );
           })}
+        </div>
+
+        {/* Enterprise Special Description - FIRST AFTER CARDS */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            className="max-w-4xl mx-auto mb-12">
+            <div className="glass-card rounded-2xl p-6 md:p-8 border-2 border-accent/30 relative overflow-hidden">
+              {/* Animated background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-primary/5 to-accent/5" />
+
+              <div className="relative z-10">
+                <div
+                  className={`flex items-start gap-4 mb-4 ${
+                    isRTL ? "flex-row-reverse" : ""
+                  }`}>
+                  <div className="p-3 rounded-full bg-accent/20 shrink-0">
+                    <Building2 className="w-7 h-7 text-accent" />
+                  </div>
+                  <div className={isRTL ? "text-right" : ""}>
+                    <h3
+                      className={`text-xl md:text-2xl font-bold text-gradient mb-3 ${
+                        isRTL ? "font-arabic" : ""
+                      }`}>
+                      {isRTL
+                        ? "باقة المؤسسات - منظومة رقمية متكاملة"
+                        : "Enterprise Plan - Complete Digital Ecosystem"}
+                    </h3>
+                    <p
+                      className={`text-sm md:text-base text-muted-foreground leading-relaxed ${
+                        isRTL ? "font-arabic" : ""
+                      }`}>
+                      {isRTL ? (
+                        <>
+                          باقة{" "}
+                          <span className="font-bold text-primary">
+                            المؤسسات (Enterprise)
+                          </span>{" "}
+                          مصممة خصيصاً للشركات التي تهدف لتحويل نشاطها إلى{" "}
+                          <span className="font-bold text-accent">
+                            "منظومة رقمية"
+                          </span>{" "}
+                          تعمل ذاتياً، حيث يتم دمج الموقع الذكي مع الـ{" "}
+                          <span className="font-bold text-primary">
+                            AI Agent
+                          </span>{" "}
+                          لإدارة دورة المبيعات والحجوزات بالكامل دون تدخل بشري.
+                        </>
+                      ) : (
+                        <>
+                          The{" "}
+                          <span className="font-bold text-primary">
+                            Enterprise plan
+                          </span>{" "}
+                          is specifically designed for companies aiming to
+                          transform their business into a self-operating{" "}
+                          <span className="font-bold text-accent">
+                            "digital ecosystem"
+                          </span>
+                          , where the smart website is integrated with the{" "}
+                          <span className="font-bold text-primary">
+                            AI Agent
+                          </span>{" "}
+                          to manage the entire sales and booking cycle without
+                          human intervention.
+                        </>
+                      )}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Visual highlights */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6">
+                  <div
+                    className={`flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20 ${
+                      isRTL ? "flex-row-reverse" : ""
+                    }`}>
+                    <Check className="w-5 h-5 text-primary shrink-0" />
+                    <span
+                      className={`text-[0.83rem] text-muted-foreground ${
+                        isRTL ? "font-arabic text-right" : ""
+                      }`}>
+                      {isRTL
+                        ? "أتمتة كاملة للمبيعات"
+                        : "Complete Sales Automation"}
+                    </span>
+                  </div>
+                  <div
+                    className={`flex items-center gap-2 p-3 rounded-lg bg-accent/10 border border-accent/20 ${
+                      isRTL ? "flex-row-reverse" : ""
+                    }`}>
+                    <Check className="w-5 h-5 text-accent shrink-0" />
+                    <span
+                      className={`text-[0.83rem] text-muted-foreground ${
+                        isRTL ? "font-arabic text-right" : ""
+                      }`}>
+                      {isRTL
+                        ? "تكامل ذكي مع الموقع"
+                        : "Smart Website Integration"}
+                    </span>
+                  </div>
+                  <div
+                    className={`flex items-center gap-2 p-3 rounded-lg bg-primary/10 border border-primary/20 ${
+                      isRTL ? "flex-row-reverse" : ""
+                    }`}>
+                    <Check className="w-5 h-5 text-primary shrink-0" />
+                    <span
+                      className={`text-[0.83rem] text-muted-foreground ${
+                        isRTL ? "font-arabic text-right" : ""
+                      }`}>
+                      {isRTL
+                        ? "عمل مستمر دون تدخل بشري"
+                        : "Continuous Autonomous Operation"}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Message Pricing Info Banner - SECOND AFTER ENTERPRISE */}
+          <motion.div
+            initial={{ opacity: 0, y: 40, scale: 0.95 }}
+            animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="max-w-4xl mx-auto">
+            <div className="glass-card rounded-2xl p-6 md:p-8 border-2 border-primary/30 relative overflow-hidden">
+              {/* Animated background gradient */}
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5 animate-pulse" />
+
+              <div className="relative z-10">
+                <div className="flex items-center justify-center gap-3 mb-4">
+                  <div className="p-2 rounded-full bg-primary/20">
+                    <MessageSquare className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3
+                    className={`text-xl md:text-2xl font-bold text-gradient ${
+                      isRTL ? "font-arabic" : ""
+                    }`}>
+                    {isRTL ? "تسعير الرسائل المرن" : "Flexible Message Pricing"}
+                  </h3>
+                </div>
+
+                <div className={`text-center ${isRTL ? "font-arabic" : ""}`}>
+                  <p className="text-sm md:text-base text-muted-foreground mb-4">
+                    {isRTL
+                      ? "تُحسب تكلفة الرسائل حسب الاستخدام الفعلي:"
+                      : "Message costs are calculated based on actual usage:"}
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <div className="glass-card px-6 py-3 rounded-xl border border-primary/20 hover:border-primary/40 transition-all hover:scale-105">
+                      <div className="flex items-center gap-2">
+                        {/* <Sparkles className="w-4 h-4 text-accent" /> */}
+                        <span className="text-lg font-bold text-primary">
+                          3 {isRTL ? "د.ك" : "KWD"}
+                        </span>
+                        <span
+                          className={`text-[0.83rem] text-muted-foreground ${
+                            isRTL ? "font-arabic" : ""
+                          }`}>
+                          {isRTL ? "لكل 100 رسالة" : "per 100 messages"}
+                        </span>
+                      </div>
+                    </div>
+
+                    <div
+                      className={`text-muted-foreground ${
+                        isRTL ? "font-arabic" : "hidden sm:block"
+                      }`}>
+                      {isRTL ? "أو" : "or"}
+                    </div>
+
+                    <div className="glass-card px-6 py-3 rounded-xl border border-accent/20 hover:border-accent/40 transition-all hover:scale-105">
+                      <div className="flex items-center gap-2">
+                        {/* <Zap className="w-4 h-4 text-accent" /> */}
+                        <span className="text-lg font-bold text-accent">
+                          25 {isRTL ? "د.ك" : "KWD"}
+                        </span>
+                        <span
+                          className={`text-[0.83rem] text-muted-foreground ${
+                            isRTL ? "font-arabic" : ""
+                          }`}>
+                          {isRTL ? "لكل 1000 رسالة" : "per 1000 messages"}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -193,6 +193,7 @@ export const TestimonialsSection = () => {
                   initial={{ opacity: 0, scale: 0.9 }}
                   animate={isInView ? { opacity: 1, scale: 1 } : {}}
                   transition={{ duration: 0.6, delay: 0.3 }}>
+                  
                   <div
                     className="bg-card/80 backdrop-blur-xl border border-border/50 rounded-3xl p-8 md:p-12 relative overflow-hidden group"
                     dir={isRTL ? "rtl" : "ltr"}>

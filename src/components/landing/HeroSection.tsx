@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import Lottie from 'lottie-react';
-import { ChevronDown, Sparkles } from 'lucide-react';
+import { ChevronDown, Bot } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import chatPotAnimation from '@/assets/chat_pot.json';
 
@@ -63,7 +63,7 @@ export const HeroSection = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
             >
-              <Sparkles className="w-4 h-4 text-primary" />
+              <Bot className="w-6 h-6 text-primary" />
               <span className={`text-sm font-medium text-primary ${isRTL ? 'font-arabic' : ''}`}>
                 {t('hero.badge')}
               </span>
@@ -182,7 +182,7 @@ export const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
           onClick={scrollToAbout}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
+          className="absolute bottom-0 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
         >
           <span className={`text-sm ${isRTL ? 'font-arabic' : ''}`}>{t('hero.scrollDown')}</span>
           <motion.div

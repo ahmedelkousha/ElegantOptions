@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
 const TermsOfService = () => {
@@ -91,16 +91,14 @@ const TermsOfService = () => {
       content: 'For questions regarding these terms, please contact us at Info@elegant-options.com or call +965 66305551.'
     }
   ];
-
+const navigate = useNavigate();
   return (
     <div className="min-h-screen bg-background">
       <div className="container mx-auto px-4 py-12">
-        <Link to="/">
-          <Button variant="ghost" className="mb-8">
+          <Button variant="ghost" className="mb-8" onClick={() => navigate(-1)}>
             <ArrowLeft className={`w-4 h-4 ${isRTL ? 'ml-2 rotate-180' : 'mr-2'}`} />
             {isRTL ? 'العودة للرئيسية' : 'Back to Home'}
           </Button>
-        </Link>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}

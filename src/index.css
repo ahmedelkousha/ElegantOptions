@@ -270,9 +270,6 @@
       transparent 45%
     );
 }
-#lovable-badge {
-  display: none !important;
-}
 
 /* Swiper Testimonials Styles */
 .testimonials-swiper {
@@ -296,3 +293,39 @@
 .testimonials-swiper .swiper-pagination-bullet-active {
   background: hsl(var(--primary));
 }
+
+#home,
+  #about,
+  #services,
+  #portfolio,
+  #testimonials,
+  #pricing,
+  #contact{
+scroll-margin: 20px !important;
+  }
+
+  /* 1. Hides scrollbar INSIDE mobile menu */
+        #mobile-menu-container::-webkit-scrollbar {
+          display: none !important;
+        }
+        #mobile-menu-container {
+          -ms-overflow-style: none !important;
+          scrollbar-width: none !important;
+        }
+
+        /* 2. Custom Styling for the Main Page Scrollbar */
+        ::-webkit-scrollbar {
+          width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+          background: transparent; 
+        }
+        ::-webkit-scrollbar-thumb {
+          background-color: hsl(var(--muted-foreground) / 0.3); 
+          border-radius: 20px;
+          border: 2px solid transparent;
+          background-clip: content-box;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+          background-color: hsl(var(--primary) / 0.8); 
+        }

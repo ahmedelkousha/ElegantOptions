@@ -131,7 +131,7 @@ export const translations = {
             "Review Booster System",
             "Performance Tracking Dashboard",
             "100 Free Messages",
-            "Message cost: 3 KWD per 100 or 25 KWD per 1000",
+            "Message cost: 3 KWD per 100 or 29 KWD per 1000",
           ],
         },
         essential: {
@@ -421,7 +421,7 @@ export const translations = {
             "نظام التقييم الذكي (Review Booster)",
             "لوحة تحكم لمتابعة الأداء",
             "100 رسالة مجانية",
-            "تكلفة الرسائل: 3 د.ك لكل 100 أو 25 د.ك لكل 1000",
+            "تكلفة الرسائل: 3 د.ك لكل 100 أو 29 د.ك لكل 1000",
           ],
         },
         essential: {

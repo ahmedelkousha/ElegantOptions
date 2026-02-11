@@ -9,21 +9,21 @@ import tiktok from "@/assets/icons/tiktok.png";
 const socialLinks = [
   {
     icon: Instagram,
-    href: "https://instagram.com/elegantoptions",
+    href: "https://www.instagram.com/elegant.options.ai",
     label: "Instagram",
   },
-  {
-    icon: Twitter,
-    href: "https://twitter.com/elegantoptions",
-    label: "Twitter",
-  },
-  {
-    icon: Facebook,
-    href: "https://facebook.com/elegantoptions",
-    label: "Facebook",
-  },
-  { icon: Phone, href: "tel:+96566305551", label: "Phone" },
-  { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
+  // {
+  //   icon: Twitter,
+  //   href: "https://twitter.com/elegantoptions",
+  //   label: "Twitter",
+  // },
+  // {
+  //   icon: Facebook,
+  //   href: "https://facebook.com/elegantoptions",
+  //   label: "Facebook",
+  // },
+  // { icon: Phone, href: "tel:+96566305551", label: "Phone" },
+  // { icon: Youtube, href: "https://youtube.com", label: "YouTube" },
 ];
 
 const navLinks = [
@@ -54,12 +54,11 @@ export const Footer = () => {
           {/* Brand */}
           <div
             className={`lg:col-span-2 ${isRTL ? "text-right" : "text-left"}`}>
-            <motion.div
-              className="flex items-center gap-3 mb-4">
+            <motion.div className="flex items-center gap-3 mb-4">
               <img
                 src={logo}
-                style={{cursor:'pointer'}}
-                onClick={()=> scrollToSection('home')}
+                style={{ cursor: "pointer" }}
+                onClick={() => scrollToSection("home")}
                 alt="Elegant Options"
                 className="h-12 md:h-14 w-auto object-contain"
               />
@@ -72,7 +71,8 @@ export const Footer = () => {
             </p>
 
             {/* Social Links */}
-            <div className={`flex gap-3 flex-wrap ${isRTL ? "justify-start" : ""}`}>
+            <div
+              className={`flex gap-3 flex-wrap ${isRTL ? "justify-start" : ""}`}>
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -94,7 +94,7 @@ export const Footer = () => {
                 href="https://www.tiktok.com/@elegant_options">
                 <img className="w-5 h-5" src={tiktok} alt="tiktok" />
               </a>
-              <a
+              {/* <a
                 className="hover:scale-[1.1] hover:translate-y-[-3px] duration-200 transition w-10 h-10 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center hover:bg-primary/20 hover:border-primary/50"
                 href="https://twitter.com">
                 <img className="w-5 h-5" src={x} alt="x" />
@@ -103,7 +103,7 @@ export const Footer = () => {
                 className="hover:scale-[1.1] hover:translate-y-[-3px] duration-200 transition w-10 h-10 rounded-lg bg-muted/50 border border-border/50 flex items-center justify-center hover:bg-primary/20 hover:border-primary/50"
                 href="https://snapshat.com">
                 <img className="w-5 h-5" src={snapchat} alt="snapchat" />
-              </a>
+              </a> */}
             </div>
           </div>
 

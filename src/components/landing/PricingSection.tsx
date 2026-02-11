@@ -397,7 +397,7 @@ export const PricingSection = () => {
                       <div className="flex items-center gap-2">
                         {/* <Zap className="w-4 h-4 text-accent" /> */}
                         <span className="text-lg font-bold text-accent">
-                          25 {isRTL ? "د.ك" : "KWD"}
+                          29 {isRTL ? "د.ك" : "KWD"}
                         </span>
                         <span
                           className={`text-[0.83rem] text-muted-foreground ${

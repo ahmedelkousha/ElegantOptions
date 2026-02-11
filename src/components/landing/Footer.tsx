@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
 import { Instagram, Twitter, Facebook, Phone, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import snapchat from "@/assets/icons/snapchat.png";
 import x from "@/assets/icons/x.png";
@@ -173,20 +174,20 @@ export const Footer = () => {
               className={`flex gap-6 text-sm text-muted-foreground ${
                 isRTL ? "flex-row-reverse" : ""
               }`}>
-              <a
-                href="/privacy"
+              <Link
+                to="/privacy"
                 className={`hover:text-foreground transition-colors ${
                   isRTL ? "font-arabic" : ""
                 }`}>
                 {t("footer.privacy")}
-              </a>
-              <a
-                href="/terms"
+              </Link>
+              <Link
+                to="/terms"
                 className={`hover:text-foreground transition-colors ${
                   isRTL ? "font-arabic" : ""
                 }`}>
                 {t("footer.terms")}
-              </a>
+              </Link>
             </div>
           </div>
         </div>

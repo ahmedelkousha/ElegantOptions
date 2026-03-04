@@ -34,29 +34,26 @@ export const ServicesSection = () => {
       ref={ref}
       className="section-container relative overflow-hidden">
       {/* Cinematic Background with parallax */}
-      <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
+      {/* <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-primary/5 to-accent/5 rounded-full blur-3xl" />
-      </motion.div>
+      </motion.div> */}
 
       <div className="container mx-auto relative z-10">
         {/* Header with cinematic reveal */}
         <motion.div
-          initial={{ opacity: 0, y: 80 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          transition={{ duration: 0.6 }}
           className="text-center mb-16">
           <motion.div
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}>
-            <motion.span
-              className="w-2 h-2 rounded-full bg-primary"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-            />
+            <span
+              className={`w-2 h-2 rounded-full bg-primary ${isRTL ? "font-arabic" : ""}`}></span>
             <span
               className={`text-sm font-medium text-primary ${
                 isRTL ? "font-arabic" : ""
@@ -69,15 +66,15 @@ export const ServicesSection = () => {
             className={`text-3xl md:text-4xl lg:text-5xl font-bold mb-4 ${
               isRTL ? "font-arabic" : ""
             }`}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 25 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.3 }}>
+            transition={{ duration: 0.6, delay: 0.2 }}>
             {t("services.title")}{" "}
             <motion.span
               className="text-gradient inline-block"
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: 0.5 }}>
+              transition={{ duration: 0.5, delay: 0.4 }}>
               {t("services.titleHighlight")}
             </motion.span>
           </motion.h2>
@@ -86,9 +83,9 @@ export const ServicesSection = () => {
             className={`text-lg text-muted-foreground max-w-2xl mx-auto ${
               isRTL ? "font-arabic" : ""
             }`}
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}>
+            transition={{ duration: 0.6, delay: 0.3 }}>
             {t("services.subtitle")}
           </motion.p>
         </motion.div>
@@ -104,49 +101,45 @@ export const ServicesSection = () => {
             return (
               <motion.div
                 key={service.key}
-                initial={{
-                  opacity: 0,
-                  y: 100,
-                  rotateY: index % 2 === 0 ? -10 : 10,
-                  scale: 0.9,
-                }}
-                animate={
-                  isInView
-                    ? {
-                        opacity: 1,
-                        y: 0,
-                        rotateY: 0,
-                        scale: 1,
-                      }
-                    : {}
-                }
+                // initial={{
+                //   opacity: 0,
+                //   y: 50,
+                //   scale: 0.95,
+                // }}
+                // animate={
+                //   isInView
+                //     ? {
+                //         opacity: 1,
+                //         y: 0,
+                //         scale: 1,
+                //       }
+                //     : {}
+                // }
                 transition={{
-                  duration: 1,
-                  delay: 0.4 + index * 0.2,
-                  ease: [0.25, 0.46, 0.45, 0.94],
+                  duration: 0.6,
+                  delay: 0.3 + index * 0.1,
                 }}
                 whileHover={{
-                  y: -15,
-                  scale: 1.02,
-                  transition: { duration: 0.3 },
+                  y: -8,
+                  scale: 1.01,
+                  transition: { duration: 0.2 },
                 }}
                 className="group perspective-1000">
                 <div className="glass-card p-6 md:p-8 rounded-2xl h-full relative overflow-hidden">
-                  {/* Animated gradient border */}
-                  <motion.div
-                    className={`absolute inset-0 bg-gradient-to-br ${service.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-700`}
-                  />
+                  {/* Static gradient border on hover via CSS */}
+                  {/* <div
+                    className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+                    style={{
+                      backgroundImage: `linear-gradient(to bottom right, var(--tw-gradient-stops))`,
+                    }}
+                  /> */}
 
-                  {/* Shimmer effect on hover */}
-                  <motion.div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
-
-                  {/* Icon with 3D hover */}
+                  {/* Icon with hover scale */}
                   <motion.div
                     className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 relative z-10`}
                     whileHover={{
-                      scale: 1.1,
-                      rotate: [0, -5, 5, 0],
-                      transition: { duration: 0.4 },
+                      scale: 1.05,
+                      transition: { duration: 0.2 },
                     }}>
                     <Icon className="w-7 h-7 text-white" />
                   </motion.div>
@@ -172,14 +165,16 @@ export const ServicesSection = () => {
                     {features.map((feature, i) => (
                       <motion.li
                         key={i}
-                        initial={{ opacity: 0, x: isRTL ? 30 : -30 }}
+                        initial={{ opacity: 0, x: isRTL ? 20 : -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
                         transition={{
-                          delay: 0.8 + index * 0.2 + i * 0.1,
-                          duration: 0.5,
+                          delay: 0.5 + index * 0.1 + i * 0.05,
+                          duration: 0.4,
                         }}
                         className={`flex  gap-3 ${
-                          isRTL ? "items-center flex-row-reverse" : "!justify-start"
+                          isRTL
+                            ? "items-center flex-row-reverse"
+                            : "!justify-start"
                         }`}>
                         <motion.div
                           className={`w-5 h-5 rounded-full bg-gradient-to-br ${service.gradient} flex items-center justify-center flex-shrink-0`}

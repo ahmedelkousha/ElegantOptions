@@ -33,20 +33,20 @@ export const AboutSection = () => {
       className="section-container relative overflow-hidden"
     >
       {/* Cinematic Background Elements */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute inset-0 network-bg opacity-50"
         style={{ y }}
-      />
+      /> */}
       
       {/* Floating orbs with parallax */}
-      <motion.div 
+      {/* <motion.div 
         className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-primary/20 to-accent/10 rounded-full blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, -150]) }}
       />
       <motion.div 
         className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-accent/20 to-primary/10 rounded-full blur-3xl"
         style={{ y: useTransform(scrollYProgress, [0, 1], [0, 150]) }}
-      />
+      /> */}
       
       <div className="container mx-auto relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">

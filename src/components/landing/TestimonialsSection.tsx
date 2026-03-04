@@ -25,53 +25,53 @@ import "swiper/css";
 const testimonials = [
   {
     id: 1,
-    name: "Ahmed Al-Rashid",
-    nameAr: "أحمد الراشد",
-    role: "CEO, Tech Solutions",
-    roleAr: "الرئيس التنفيذي، تك سوليوشنز",
+    name: "Omar Farouk",
+    nameAr: "عمر فاروق",
+    role: "Customer Support Manager, Delta Logistics",
+    roleAr: "مدير خدمة العملاء، دلتا لوجيستكس",
     content:
-      "Elegant Options transformed our customer service completely. The AI agent handles 80% of inquiries automatically, saving us countless hours.",
+      "Before working with Elegant Options, our support team was overwhelmed with repetitive questions. Now most routine inquiries are handled automatically, and our team can focus on complex cases. It honestly made our daily operations much smoother.",
     contentAr:
-      "حولت إليجانت أوبشنز خدمة العملاء لدينا بالكامل. يتعامل وكيل الذكاء الاصطناعي مع 80٪ من الاستفسارات تلقائياً، مما يوفر لنا ساعات لا تحصى.",
+      "قبل العمل مع إليجانت أوبشنز، كان فريق خدمة العملاء لدينا يعاني من ضغط كبير بسبب الأسئلة المتكررة. الآن يتم التعامل مع معظم الاستفسارات الروتينية تلقائياً، وأصبح بإمكان الفريق التركيز على الحالات المعقدة. بصراحة سهلت علينا العمل اليومي بشكل كبير.",
     rating: 5,
     image: person1,
   },
   {
     id: 2,
-    name: "Sara Mohammed",
-    nameAr: "سارة محمد",
-    role: "Marketing Director, E-Commerce Hub",
-    roleAr: "مديرة التسويق، إي كوميرس هب",
+    name: "Nour El-Din Salem",
+    nameAr: "نور الدين سالم",
+    role: "Head of Marketing, Urban Style Store",
+    roleAr: "رئيس قسم التسويق، متجر أوربان ستايل",
     content:
-      "The WhatsApp Business API integration was seamless. Our campaign open rates jumped to 98% and conversions increased by 40%.",
+      "The WhatsApp integration helped us stay closer to our customers. We started seeing faster responses and better engagement within weeks. It became one of our main sales channels.",
     contentAr:
-      "كان تكامل واتساب للأعمال سلساً للغاية. قفزت معدلات فتح حملاتنا إلى 98٪ وزادت التحويلات بنسبة 40٪.",
-    rating: 5,
-    image: person2,
-  },
-  {
-    id: 3,
-    name: "Khalid Al-Sabah",
-    nameAr: "خالد الصباح",
-    role: "Owner, Premium Retail",
-    roleAr: "مالك، بريميوم ريتيل",
-    content:
-      "The review booster system helped us get 200+ new Google reviews in just 3 months. Our online reputation has never been better.",
-    contentAr:
-      "ساعدنا نظام تعزيز المراجعات في الحصول على أكثر من 200 مراجعة جديدة على جوجل في 3 أشهر فقط. سمعتنا الإلكترونية لم تكن أفضل من ذلك.",
+      "تكامل واتساب ساعدنا نكون أقرب لعملائنا. بدأنا نلاحظ سرعة أكبر في الردود وتفاعل أفضل خلال أسابيع قليلة. وأصبح واحداً من أهم قنوات البيع لدينا.",
     rating: 5,
     image: person3,
   },
   {
-    id: 4,
-    name: "Fatima Hassan",
-    nameAr: "فاطمة حسن",
-    role: "Operations Manager, Healthcare Plus",
-    roleAr: "مديرة العمليات، هيلث كير بلس",
+    id: 3,
+    name: "Maha Abdelrahman",
+    nameAr: "مها عبد الرحمن",
+    role: "Founder, Glow Beauty Clinic",
+    roleAr: "مؤسسة، عيادة جلو للتجميل",
     content:
-      "Implementing the full automation suite reduced our operational costs by 60%. The ROI was visible within the first month.",
+      "What I appreciated most was how simple everything was to set up. The system helped us collect more genuine reviews from satisfied clients without pushing them. It improved our online image naturally.",
     contentAr:
-      "أدى تنفيذ مجموعة الأتمتة الكاملة إلى تقليل تكاليفنا التشغيلية بنسبة 60٪. كان العائد على الاستثمار واضحاً خلال الشهر الأول.",
+      "أكثر شيء أعجبني هو سهولة الإعداد. النظام ساعدنا نجمع تقييمات حقيقية من العملاء الراضين بدون إلحاح. وتحسنت صورتنا على الإنترنت بشكل طبيعي.",
+    rating: 5,
+    image: person2,
+  },
+  {
+    id: 4,
+    name: "Mona Tarek",
+    nameAr: "منى طارق",
+    role: "Operations Director, MedCare Clinics",
+    roleAr: "مديرة العمليات، عيادات ميدكير",
+    content:
+      "We were looking for a way to reduce manual work across departments. After implementing the automation tools, internal processes became faster and more organized. The difference was noticeable within the first few weeks.",
+    contentAr:
+      "كنا نبحث عن طريقة لتقليل العمل اليدوي بين الأقسام. بعد تطبيق أدوات الأتمتة، أصبحت العمليات أسرع وأكثر تنظيماً. لاحظنا الفرق خلال الأسابيع الأولى.",
     rating: 5,
     image: person4,
   },
@@ -147,10 +147,10 @@ export const TestimonialsSection = () => {
       ref={sectionRef}
       className="py-24 bg-gradient-to-b from-background via-muted/30 to-background relative overflow-hidden">
       {/* Ambient background effects */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}

@@ -49,10 +49,10 @@ export const ContactSection = () => {
     // Open WhatsApp in new tab
     window.open(whatsappUrl, "_blank");
 
-    toast({
-      title: t("contact.form.success"),
-      description: "",
-    });
+    // toast({
+    //   title: t("contact.form.success"),
+    //   description: "",
+    // });
 
     setFormData({ name: "", email: "", phone: "", message: "" });
     setIsSubmitting(false);
@@ -86,11 +86,11 @@ export const ContactSection = () => {
       ref={ref}
       className="section-container relative overflow-hidden">
       {/* Cinematic Background */}
-      <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
+      {/* <motion.div className="absolute inset-0" style={{ y: backgroundY }}>
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-br from-primary/5 to-accent/5 rounded-full blur-3xl" />
-      </motion.div>
+      </motion.div> */}
 
       <div className="container mx-auto relative z-10">
         {/* Header with cinematic reveal */}

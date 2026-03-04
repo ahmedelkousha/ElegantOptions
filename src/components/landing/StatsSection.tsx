@@ -106,10 +106,10 @@ export const StatsSection = () => {
   return (
     <section className="py-24 relative overflow-hidden bg-gradient-to-b from-background via-muted/30 to-background">
       {/* Background decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+      {/* <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 relative z-10" ref={ref}>
         {/* Section Header */}

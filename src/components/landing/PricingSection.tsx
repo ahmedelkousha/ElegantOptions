@@ -38,10 +38,10 @@ export const PricingSection = () => {
       ref={ref}
       className="section-container relative overflow-hidden">
       {/* Background */}
-      <motion.div
+      {/* <motion.div
         className="absolute inset-0 network-bg opacity-30"
         style={{ y: backgroundY }}
-      />
+      /> */}
 
       <div className="container mx-auto relative z-10">
         {/* Header */}
@@ -53,7 +53,7 @@ export const PricingSection = () => {
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent/10 border border-accent/20 mb-6">
             <Crown className="w-4 h-4 text-accent" />
             <span
-              className={`text-sm font-medium ${isRTL ? "font-arabic" : ""}`}>
+              className={`text-sm font-medium text-accent ${isRTL ? "font-arabic" : ""}`}>
               {t("pricing.badge")}
             </span>
           </div>

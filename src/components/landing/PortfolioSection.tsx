@@ -88,9 +88,9 @@ export const PortfolioSection = () => {
       className="py-24 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden"
     >
       {/* Background elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/5 rounded-full blur-3xl" />
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section Header */}

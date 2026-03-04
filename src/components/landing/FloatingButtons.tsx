@@ -30,7 +30,7 @@ export const FloatingButtons = () => {
         animate={{ scale: 1 }}
         transition={{ delay: 1, type: 'spring' }}
         onClick={openWhatsApp}
-        className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl transition-all duration-300"
+        className="fixed bottom-6 left-6 z-50 w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-white flex items-center justify-center shadow-lg hover:shadow-xl"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
@@ -47,10 +47,11 @@ export const FloatingButtons = () => {
           <motion.button
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.26 }}
             exit={{ scale: 0, opacity: 0 }}
             onClick={scrollToTop}
-            className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center shadow-lg glow-primary transition-all duration-300"
-            whileHover={{ scale: 1.1, y: -5 }}
+            className="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground flex items-center justify-center shadow-lg glow-primary"
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
             <ArrowUp className="w-5 h-5" />
